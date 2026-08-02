@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Necto Mono';
+  src: url('/tipo/fonts/NectoMono-Regular.woff2') format('woff2'),
+       url('/tipo/fonts/NectoMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +14,7 @@
 body {
   background-color: #fff;
   max-width: 100%;
-  font-family: sans-serif;
+  font-family: 'Necto Mono', monospace;
   margin: 0;
   overflow-x: hidden;
 }
@@ -39,7 +48,6 @@ body {
 
 #topbar-buttons .toggle-active {
   opacity: 1;
-  font-weight: bold;
   text-decoration: underline;
 }
 
@@ -129,20 +137,20 @@ body.menu-ready .right {
 }
 
 .proyecto-meta-left {
-  font-family: monospace;
-  font-size: 7.5pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 8pt;
   text-transform: uppercase;
 }
 
 .proyecto-meta {
-  font-family: monospace;
-  font-size: 7.5pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 8pt;
   text-transform: uppercase;
 }
 
 .proyecto-tag {
-  font-family: monospace;
-  font-size: 7pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 8pt;
   background-color: pink;
   padding: 3px 6px;
   border: 1px solid black;
@@ -164,8 +172,8 @@ body.menu-ready .right {
 }
 
 .proyecto-title {
-  font-size: 13pt;
-  font-weight: 700;
+  font-size: 14pt;
+  letter-spacing: 0.5px;
   margin: 10px 0 4px 0;
   text-transform: lowercase;
 }
@@ -226,25 +234,25 @@ body.menu-ready .right {
 }
 
 .nombre-destacado {
-  font-size: 16pt;
-  font-weight: bold;
+  font-size: 18pt;
+  letter-spacing: 0.5px;
   margin: 0 0 5px 0;
   text-transform: lowercase;
 }
 
 .pronombres {
-  font-family: monospace;
-  font-size: 9pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 10pt;
   color: #666;
   font-weight: normal;
 }
 
 .rol {
-  font-family: monospace;
-  font-size: 8.5pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 8pt;
   color: blue;
   text-transform: uppercase;
-  font-weight: bold;
+  letter-spacing: 0.5px;
   margin-bottom: 15px;
   display: block;
 }
@@ -306,7 +314,7 @@ body.menu-ready .right {
   align-items: center;
   justify-content: center;
   box-shadow: 3px 3px 0px black;
-  font-weight: bold;
+  font-size: 16px;
 }
 
 .carousel-btn:hover {
@@ -322,8 +330,8 @@ body.menu-ready .right {
 }
 
 .carousel-nav-hint {
-  font-family: monospace;
-  font-size: 7.5pt;
+  font-family: 'Necto Mono', monospace;
+  font-size: 8pt;
   text-align: right;
   padding-top: 10px;
   text-transform: uppercase;
@@ -338,7 +346,7 @@ body.menu-ready .right {
   background-color: white;
   border-top: 2px solid black;
   padding: 10px 20px;
-  font-size: 9pt;
+  font-size: 10pt;
   z-index: 2500;
   text-align: center;
 }
@@ -449,13 +457,13 @@ html[lang="es"] .en {
 }
 
 .cliente-nombre {
-  font-size: 13pt;
-  font-weight: 700;
+  font-size: 14pt;
+  letter-spacing: 0.5px;
   text-transform: none;
 }
 
 .cliente-ano {
-  font-family: monospace;
+  font-family: 'Necto Mono', monospace;
   font-size: 10pt;
   color: #444;
   white-space: nowrap;
