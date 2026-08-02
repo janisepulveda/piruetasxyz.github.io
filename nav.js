@@ -10,7 +10,7 @@ document.body.insertAdjacentHTML(
             </button>
         </div>
         <div class="topbar-row">
-            <span class="es">len:</span><span class="en">lan:</span>
+            <span class="es">leng:</span><span class="en">lang:</span>
             <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
         </div>
     </div>
@@ -73,7 +73,7 @@ const menuSpans = menuBtn.querySelectorAll('[data-state]');
 window.setMenuOpen = function (isOpen) {
   menuSide.classList.toggle('active', isOpen);
   menuSpans.forEach((span) => {
-    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'hide' : 'show'));
+    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'show' : 'hide'));
   });
   localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
 };
