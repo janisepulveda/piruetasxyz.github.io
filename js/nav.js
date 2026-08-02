@@ -21,8 +21,8 @@ document.body.insertAdjacentHTML(
   'beforeend',
   `
     <footer class="colophon-banner">
-        <span class="es">piruetas xyz — hecho a mano con html, css y js.</span>
-        <span class="en">piruetas xyz — handmade with html, css and js.</span>
+        <span class="es">piruetas xyz — hecho a mano con html, css y js</span>
+        <span class="en">piruetas xyz — handmade with html, css and js</span>
     </footer>
 `,
 );
@@ -73,7 +73,10 @@ const menuSpans = menuBtn.querySelectorAll('[data-state]');
 window.setMenuOpen = function (isOpen) {
   menuSide.classList.toggle('active', isOpen);
   menuSpans.forEach((span) => {
-    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'show' : 'hide'));
+    span.classList.toggle(
+      'toggle-active',
+      span.dataset.state === (isOpen ? 'show' : 'hide'),
+    );
   });
   localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
 };
@@ -84,9 +87,9 @@ setMenuOpen(localStorage.getItem('menuOpen') === 'true');
 // painted once, so navigating between pages doesn't replay the
 // open/close animation on load
 requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-        document.body.classList.add('menu-ready');
-    });
+  requestAnimationFrame(() => {
+    document.body.classList.add('menu-ready');
+  });
 });
 
 menuBtn.addEventListener('click', (e) => {

@@ -136,12 +136,8 @@
   function renderPersonas(data) {
     const h1es = document.querySelector('h1.cajita .es');
     const h1en = document.querySelector('h1.cajita .en');
-    if (h1es)
-      h1es.textContent =
-        (data.ui && data.ui.title && data.ui.title.es) || '';
-    if (h1en)
-      h1en.textContent =
-        (data.ui && data.ui.title && data.ui.title.en) || '';
+    if (h1es) h1es.textContent = data.es || '';
+    if (h1en) h1en.textContent = data.en || '';
 
     const gruposContainer = document.getElementById('grupos');
     if (!gruposContainer) {
@@ -318,13 +314,14 @@
       return;
     }
 
-    // set title
+    // set title (either a nested `title: {es, en}`, or `es`/`en` directly on data)
     const h1 = container.querySelector('h1.cajita');
-    if (h1 && data.ui && data.ui.title) {
+    const titleData = data.title || data;
+    if (h1) {
       const esSpan = h1.querySelector('.es');
       const enSpan = h1.querySelector('.en');
-      if (esSpan) esSpan.textContent = data.ui.title.es || '';
-      if (enSpan) enSpan.textContent = data.ui.title.en || '';
+      if (esSpan) esSpan.textContent = (titleData && titleData.es) || '';
+      if (enSpan) enSpan.textContent = (titleData && titleData.en) || '';
     }
 
     // clear existing sections except the title
@@ -373,12 +370,8 @@
   function renderClientes(data) {
     const h1es = document.querySelector('h1.cajita .es');
     const h1en = document.querySelector('h1.cajita .en');
-    if (h1es)
-      h1es.textContent =
-        (data.ui && data.ui.title && data.ui.title.es) || '';
-    if (h1en)
-      h1en.textContent =
-        (data.ui && data.ui.title && data.ui.title.en) || '';
+    if (h1es) h1es.textContent = data.es || '';
+    if (h1en) h1en.textContent = data.en || '';
 
     const container = document.getElementById('clientes');
     if (!container) {

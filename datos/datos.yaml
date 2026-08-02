@@ -1,8 +1,6 @@
 personas:
-  ui:
-    title:
-      es: 'personas'
-      en: 'people'
+  en: 'people'
+  es: 'personas'
 
   grupos:
     - id: empleades
@@ -241,10 +239,8 @@ personas:
               url: 'https://github.com/usuario'
 
 clientes:
-  ui:
-    title:
-      es: 'clientes'
-      en: 'clients'
+  en: 'clients'
+  es: 'clientes'
   clientes:
     - nombre: 'bibliotecaCuir'
       anho: 2026
@@ -346,16 +342,14 @@ proyectos:
         en: 'teaching activities and workshops'
 
 parla:
-  ui:
-    title:
-      es: 'parla'
-      en: 'parla'
-    meta:
-      es: '2025'
-      en: '2025'
-    tag:
-      es: 'popusintes'
-      en: 'popusynths'
+  es: 'parla'
+  en: 'parla'
+  meta:
+    es: '2025'
+    en: '2025'
+  tag:
+    es: 'popusintes'
+    en: 'popusynths'
 
   hero:
     image: '/media/proyectos/parla-canasto.jpg'
@@ -420,8 +414,8 @@ parla:
 
     - id: creditos
       title:
+        en: 'credits'
         es: 'créditos'
-        en: 'collabs'
       content:
         es: |-
           empresa: @piruetas.xyz
@@ -439,10 +433,9 @@ parla:
           font: @uno_ca
 
 investigacion-gerassic-organ:
-  ui:
-    title:
-      es: 'página en mantención'
-      en: 'under maintenance'
+  title:
+    es: 'página en mantención'
+    en: 'under maintenance'
   sections:
     - title: {}
       content:
@@ -450,10 +443,9 @@ investigacion-gerassic-organ:
         en: 'more information about this project coming soon.'
 
 maquinitas-tidal:
-  ui:
-    title:
-      es: 'página en mantención'
-      en: 'under maintenance'
+  title:
+    es: 'página en mantención'
+    en: 'under maintenance'
   sections:
     - title: {}
       content:
@@ -461,10 +453,9 @@ maquinitas-tidal:
         en: 'more information about this project coming soon.'
 
 gerassic-organ:
-  ui:
-    title:
-      es: 'página en mantención'
-      en: 'under maintenance'
+  title:
+    en: 'under maintenance'
+    es: 'página en mantención'
   sections:
     - title: {}
       content:
@@ -472,10 +463,9 @@ gerassic-organ:
         en: 'more information about this project coming soon.'
 
 osca:
-  ui:
-    title:
-      es: 'página en mantención'
-      en: 'under maintenance'
+  title:
+    es: 'página en mantención'
+    en: 'under maintenance'
   sections:
     - title: {}
       content:
@@ -483,21 +473,28 @@ osca:
         en: 'more information about this project coming soon.'
 
 redondela:
-  ui:
-    title:
-      es: 'página en mantención'
-      en: 'under maintenance'
+  title:
+    es: 'página en mantención'
+    en: 'under maintenance'
   sections:
     - title: {}
       content:
         es: 'próximamente más información sobre este proyecto.'
         en: 'more information about this project coming soon.'
 
-home:
-  ui:
-    title:
-      es: 'inicio'
-      en: 'home'
+talleres-momentos:
+  title:
+    es: 'página en mantención'
+    en: 'under maintenance'
+  sections:
+    - title: {}
+      content:
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
+
+inicio:
+  en: 'home'
+  es: 'inicio'
   sections:
     - title: {}
       content:
@@ -510,11 +507,9 @@ home:
         es: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
         en: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
 
-store:
-  ui:
-    title:
-      es: 'tienda'
-      en: 'store'
+tienda:
+  en: 'store'
+  es: 'tienda'
   sections:
     - title: {}
       content:
