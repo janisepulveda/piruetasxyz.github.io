@@ -351,6 +351,10 @@ body.menu-ready .right {
   text-align: center;
 }
 
+.colophon-line {
+  margin: 2px 0;
+}
+
 html[lang="en"] .es {
   display: none;
 }

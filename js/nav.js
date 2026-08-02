@@ -21,8 +21,18 @@ document.body.insertAdjacentHTML(
   'beforeend',
   `
     <footer class="colophon-banner">
-        <span class="es">piruetas xyz — hecho a mano con html, css y js</span>
-        <span class="en">piruetas xyz — handmade with html, css and js</span>
+        <div class="colophon-line">
+            <span class="es">piruetas.xyz está hecho a mano con html, css y js.</span>
+            <span class="en">piruetas.xyz is handmade with html, css and js.</span>
+        </div>
+        <div class="colophon-line">
+            <span class="es">sin rastreo, sin cookies, sin contador de visitas.</span>
+            <span class="en">no tracking, no cookies, no visitor counter.</span>
+        </div>
+        <div class="colophon-line">
+            <span class="es">tipografía: Necto Mono por <a href="https://www.collletttivo.it/" target="_blank" rel="noopener">Collletttivo</a></span>
+            <span class="en">typography: Necto Mono by <a href="https://www.collletttivo.it/" target="_blank" rel="noopener">Collletttivo</a></span>
+        </div>
     </footer>
 `,
 );
