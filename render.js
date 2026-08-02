@@ -440,6 +440,8 @@
       } else {
         console.warn('render.js: unsupported data-page', dataPage);
       }
+
+      if (window.refreshDocumentTitle) window.refreshDocumentTitle();
     } catch (err) {
       console.error('render.js error:', err);
     }

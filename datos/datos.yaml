@@ -459,3 +459,36 @@ maquinitas-tidal:
       content:
         es: 'próximamente más información sobre este proyecto.'
         en: 'more information about this project coming soon.'
+
+gerassic-organ:
+  ui:
+    title:
+      es: 'página en mantención'
+      en: 'under maintenance'
+  sections:
+    - title: {}
+      content:
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
+
+osca:
+  ui:
+    title:
+      es: 'página en mantención'
+      en: 'under maintenance'
+  sections:
+    - title: {}
+      content:
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
+
+redondela:
+  ui:
+    title:
+      es: 'página en mantención'
+      en: 'under maintenance'
+  sections:
+    - title: {}
+      content:
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
