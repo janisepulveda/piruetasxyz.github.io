@@ -492,3 +492,35 @@ redondela:
       content:
         es: 'próximamente más información sobre este proyecto.'
         en: 'more information about this project coming soon.'
+
+home:
+  ui:
+    title:
+      es: 'inicio'
+      en: 'home'
+  sections:
+    - title: {}
+      content:
+        es: 'lorem ipsum'
+        en: 'lorem ipsum'
+    - title:
+        es: 'enlaces'
+        en: 'links'
+      content:
+        es: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
+        en: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
+
+store:
+  ui:
+    title:
+      es: 'tienda'
+      en: 'store'
+  sections:
+    - title: {}
+      content:
+        es: 'pronto...'
+        en: 'soon...'
+    - title: {}
+      content:
+        es: 'desde el 2023 somos importadores oficiales de BASTL Instruments in Chile.'
+        en: 'since 2023 we are official dealers of BASTL Instruments in Chile.'

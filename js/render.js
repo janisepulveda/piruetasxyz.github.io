@@ -340,17 +340,19 @@
     });
 
     (data.sections || []).forEach((sec) => {
-      const h2 = document.createElement('h2');
-      h2.className = 'cajita';
-      const es = document.createElement('span');
-      es.className = 'es';
-      es.textContent = (sec.title && sec.title.es) || '';
-      const en = document.createElement('span');
-      en.className = 'en';
-      en.textContent = (sec.title && sec.title.en) || '';
-      h2.appendChild(es);
-      h2.appendChild(en);
-      container.appendChild(h2);
+      if (sec.title && (sec.title.es || sec.title.en)) {
+        const h2 = document.createElement('h2');
+        h2.className = 'cajita';
+        const es = document.createElement('span');
+        es.className = 'es';
+        es.textContent = sec.title.es || '';
+        const en = document.createElement('span');
+        en.className = 'en';
+        en.textContent = sec.title.en || '';
+        h2.appendChild(es);
+        h2.appendChild(en);
+        container.appendChild(h2);
+      }
 
       const p = document.createElement('p');
       if (sec.content) {
