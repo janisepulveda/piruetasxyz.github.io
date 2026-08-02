@@ -16,10 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.right').addEventListener('click', () => {
         const menu = document.getElementById('divLeftMenu');
-        const btn = document.getElementById('menu-btn');
         if (menu.classList.contains('active')) {
-            menu.classList.remove('active');
-            btn.innerText = 'menú';
+            setMenuOpen(false);
         }
     });
 });

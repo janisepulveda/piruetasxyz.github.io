@@ -53,8 +53,15 @@ document.getElementById('divLeftMenu').innerHTML = navbarContent;
 const menuBtn = document.getElementById('menu-btn');
 const menuSide = document.getElementById('divLeftMenu');
 
+window.setMenuOpen = function (isOpen) {
+    menuSide.classList.toggle('active', isOpen);
+    menuBtn.innerText = isOpen ? 'cerrar' : 'menú';
+    localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
+};
+
+setMenuOpen(localStorage.getItem('menuOpen') === 'true');
+
 menuBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    menuSide.classList.toggle('active');
-    menuBtn.innerText = menuSide.classList.contains('active') ? 'cerrar' : 'menú';
+    setMenuOpen(!menuSide.classList.contains('active'));
 });
