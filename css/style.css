@@ -10,20 +10,28 @@ body {
   overflow-x: hidden;
 }
 
-#menu-btn {
+#topbar-buttons {
   position: fixed;
   top: 15px;
   left: 15px;
   z-index: 3000;
+  display: flex;
+  gap: 8px;
+}
+
+#menu-btn,
+#lang-btn {
   cursor: pointer;
 }
 
-#lang-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 3000;
-  cursor: pointer;
+#lang-btn span {
+  opacity: 0.4;
+}
+
+#lang-btn span.lang-active {
+  opacity: 1;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .left {

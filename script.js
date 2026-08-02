@@ -2,14 +2,22 @@ const lang = localStorage.getItem('language') || 'en';
 document.documentElement.setAttribute('lang', lang);
 
 const langBtn = document.getElementById('lang-btn');
-langBtn.innerText = lang === 'en' ? 'es' : 'en';
+const langSpans = langBtn.querySelectorAll('[data-lang]');
+
+function updateLangBtn(current) {
+    langSpans.forEach((span) => {
+        span.classList.toggle('lang-active', span.dataset.lang === current);
+    });
+}
+
+updateLangBtn(lang);
 
 langBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const next = document.documentElement.getAttribute('lang') === 'en' ? 'es' : 'en';
     document.documentElement.setAttribute('lang', next);
     localStorage.setItem('language', next);
-    langBtn.innerText = next === 'en' ? 'es' : 'en';
+    updateLangBtn(next);
 });
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -1,10 +1,11 @@
 document.body.insertAdjacentHTML(
   'afterbegin',
-  '<button id="menu-btn" class="boton-piruetas">menú</button>',
-);
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  '<button id="lang-btn" class="boton-piruetas">es</button>',
+  `
+    <div id="topbar-buttons">
+        <button id="menu-btn" class="boton-piruetas">menú</button>
+        <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
+    </div>
+`,
 );
 
 document.body.insertAdjacentHTML(
