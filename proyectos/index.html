@@ -1,27 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/assets/favicon.ico" />
-    <title>proyectos — piruetas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  </head>
-  <body data-page="proyectos">
-    <div class="flex-container">
-      <div id="divLeftMenu" class="left"></div>
 
-      <div class="right">
-        <div class="contenedor-producto">
-          <h1 class="cajita"><span class="es"></span><span class="en"></span></h1>
-          <div id="proyectos" class="proyectos-list"></div>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="/assets/favicon.ico" />
+  <title>proyectos — piruetas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body data-page="proyectos">
+  <div class="flex-container">
+    <div id="divLeftMenu" class="left"></div>
+
+    <div class="right">
+      <h1 class="cajita"><span class="es">proyectos</span><span class="en">projects</span></h1>
+
+      <div class="contenedor-producto">
+        <div class="proyecto-meta" style="flex:1;">
+          <!-- left column kept intentionally minimal to match previous structure -->
+        </div>
+        <div style="flex:0 0 45%; max-width:600px;">
+          <a id="hero-link" href="#"><img id="hero-img" src="/media/piruetas-v0.jpg" alt="piruetas" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid black;"/></a>
         </div>
       </div>
-    </div>
 
-    <script src="/nav.js"></script>
-    <script src="/script.js"></script>
-    <script src="/lib/js-yaml.min.js"></script>
-    <script src="/render.js"></script>
-  </body>
+      <div id="proyectos" class="proyectos-grid"></div>
+    </div>
+  </div>
+
+  <script src="/nav.js"></script>
+  <script src="/script.js"></script>
+  <script src="/lib/js-yaml.min.js"></script>
+  <script src="/render.js"></script>
+</body>
+
 </html>

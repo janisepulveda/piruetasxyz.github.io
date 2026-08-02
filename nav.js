@@ -13,14 +13,14 @@ const navbarContent = `
         <a href="#" id="espanol">es</a>
     </h1>
     <h1><a href="/index.html">home</a></h1>
-    
+    <h1><a href="/proyectos/index.html">proyectos</a></h1>
+
     <h1>
         <a href="https://piruetas.xyz/tienda">
             <span class="es">tienda</span><span class="en">shop</span>
         </a>
     </h1>
-    
-    <h1><a href="/info/index.html">info</a></h1>
+
     <h1><a href="/personas/index.html"><span class="es">personas</span><span class="en">people</span></a></h1>
     <h1><a href="/clientes/index.html"><span class="es">clientes</span><span class="en">clients</span></a></h1>
     
