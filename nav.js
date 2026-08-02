@@ -19,8 +19,8 @@ document.body.insertAdjacentHTML(
 );
 
 const navbarContent = `
-    <h1><a href="/index.html">inicio</a></h1>
-    <h1><a href="/proyectos/index.html">proyectos</a></h1>
+    <h1><a href="/index.html"><span class="es">inicio</span><span class="en">home</span></a></h1>
+    <h1><a href="/proyectos/index.html"><span class="es">proyectos</span><span class="en">projects</span></a></h1>
 
     <h1>
         <a href="https://piruetas.xyz/tienda">
@@ -33,7 +33,7 @@ const navbarContent = `
     
     <hr style="border: 0; border-top: 1px solid black; margin: 20px 0;">
     
-    <h3 class="es">popusintes</h3><h3 class="en">popusynths</h3>
+    <h3>popusintes</h3>
     <ol>
         <li><a href="/proyectos/parla/index.html">parla</a> (2025)</li>
         <li><a href="/proyectos/osca/index.html">osca</a> (soon)</li>
