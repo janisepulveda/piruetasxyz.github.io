@@ -1,3 +1,12 @@
+document.body.insertAdjacentHTML('afterbegin', '<button id="menu-btn" class="boton-piruetas">menú</button>');
+
+document.body.insertAdjacentHTML('beforeend', `
+    <footer class="colophon-banner">
+        <span class="es">piruetas xyz — hecho a mano con html, css y js.</span>
+        <span class="en">piruetas xyz — handmade with html, css and js.</span>
+    </footer>
+`);
+
 const navbarContent = `
     <h1>
         <a href="#" id="english">en</a> /
