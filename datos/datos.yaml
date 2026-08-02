@@ -1,23 +1,23 @@
 personas:
   ui:
     title:
-      es: "personas"
-      en: "people"
+      es: 'personas'
+      en: 'people'
 
   grupos:
     - id: empleades
       header:
-        es: "empleades"
-        en: "employees"
+        es: 'empleades'
+        en: 'employees'
       miembros:
-        - nombre: "Aarón Montoya Moraga"
+        - nombre: 'Aarón Montoya Moraga'
           pronombres:
-            es: "(elle)"
-            en: "(they)"
+            es: '(elle)'
+            en: '(they)'
           rol:
-            es: "Investigador principal"
-            en: "Principal Investigator"
-          foto: "../media/proyectos/aaron-montoya.jpeg"
+            es: 'Investigador principal'
+            en: 'Principal Investigator'
+          foto: '../media/proyectos/aaron-montoya.jpeg'
           descripcion:
             es: |-
               Aarón Montoya Moraga es ingeniere civil electricista de
@@ -44,26 +44,26 @@ personas:
               of electronic musical instruments.
           links:
             - label:
-                es: "sitio"
-                en: "website"
-              url: "https://montoyamoraga.io/"
+                es: 'sitio'
+                en: 'website'
+              url: 'https://montoyamoraga.io/'
             - label:
-                es: "instagram"
-                en: "instagram"
-              url: "https://www.instagram.com/montoyamoraga/?hl=es"
+                es: 'instagram'
+                en: 'instagram'
+              url: 'https://www.instagram.com/montoyamoraga/?hl=es'
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/montoyamoraga"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/montoyamoraga'
 
-        - nombre: "Janis Sepúlveda Vera"
+        - nombre: 'Janis Sepúlveda Vera'
           pronombres:
-            es: "(ella)"
-            en: "(she)"
+            es: '(ella)'
+            en: '(she)'
           rol:
-            es: "Diseñadora"
-            en: "Designer"
-          foto: "../media/proyectos/janis-sepulveda.jpeg"
+            es: 'Diseñadora'
+            en: 'Designer'
+          foto: '../media/proyectos/janis-sepulveda.jpeg'
           descripcion:
             es: |-
               Janis Sepúlveda Vera es diseñadora industrial de la
@@ -77,297 +77,297 @@ personas:
               Universidad Católica de Chile.
           links:
             - label:
-                es: "sitio"
-                en: "website"
-              url: "https://janisepulveda.cl/"
+                es: 'sitio'
+                en: 'website'
+              url: 'https://janisepulveda.cl/'
             - label:
-                es: "instagram"
-                en: "instagram"
-              url: "https://www.instagram.com/janisepulveda"
+                es: 'instagram'
+                en: 'instagram'
+              url: 'https://www.instagram.com/janisepulveda'
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/janisepulveda"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/janisepulveda'
 
     - id: colaboradores
       header:
-        es: "colaboradores"
-        en: "collaborators"
+        es: 'colaboradores'
+        en: 'collaborators'
       miembros:
-        - nombre: "Mateo Arce"
+        - nombre: 'Mateo Arce'
           pronombres:
-            es: "(él)"
-            en: "(he)"
+            es: '(él)'
+            en: '(he)'
           rol:
-            es: "docencia, programación, prototipado (2025)"
-            en: "teaching, programming, prototyping (2025)"
+            es: 'docencia, programación, prototipado (2025)'
+            en: 'teaching, programming, prototyping (2025)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/matbutom"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/matbutom'
 
     - id: practicante
       header:
-        es: "practicante"
-        en: "intern"
+        es: 'practicante'
+        en: 'intern'
       miembros:
-        - nombre: "Bernardita Jesús"
+        - nombre: 'Bernardita Jesús'
           pronombres:
-            es: "(ella)"
-            en: "(she)"
+            es: '(ella)'
+            en: '(she)'
           rol:
-            es: "prototipado, fabricación (2025)"
-            en: "prototyping, fabrication (2025)"
+            es: 'prototipado, fabricación (2025)'
+            en: 'prototyping, fabrication (2025)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/Bernardita-Jesus"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/Bernardita-Jesus'
 
     - id: exalumnes
       header:
-        es: "exalumnes"
-        en: "alumni"
+        es: 'exalumnes'
+        en: 'alumni'
       miembros:
-        - nombre: "Andrés Martin"
+        - nombre: 'Andrés Martin'
           pronombres:
-            es: "(él)"
-            en: "(he)"
+            es: '(él)'
+            en: '(he)'
           rol:
-            es: "docencia, programación, prototipado (2023-2025)"
-            en: "teaching, programming, prototyping (2023-2025)"
+            es: 'docencia, programación, prototipado (2023-2025)'
+            en: 'teaching, programming, prototyping (2023-2025)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "sitio"
-                en: "website"
-              url: "https://andresmartinm.github.io/portafolioAnim2023/"
+                es: 'sitio'
+                en: 'website'
+              url: 'https://andresmartinm.github.io/portafolioAnim2023/'
             - label:
-                es: "instagram"
-                en: "instagram"
-              url: "https://www.instagram.com/andresmartin_elmartin/"
+                es: 'instagram'
+                en: 'instagram'
+              url: 'https://www.instagram.com/andresmartin_elmartin/'
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/AndresMartinM"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/AndresMartinM'
 
-        - nombre: "Francisco Stephens"
+        - nombre: 'Francisco Stephens'
           pronombres:
-            es: "(él)"
-            en: "(he)"
+            es: '(él)'
+            en: '(he)'
           rol:
-            es: "prototipado, soldadura (2025)"
-            en: "prototyping, soldering (2025)"
+            es: 'prototipado, soldadura (2025)'
+            en: 'prototyping, soldering (2025)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/FranUDP"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/FranUDP'
 
-        - nombre: "Valentina Montecinos"
+        - nombre: 'Valentina Montecinos'
           pronombres:
-            es: "(pronombre)"
-            en: "(pronoun)"
+            es: '(pronombre)'
+            en: '(pronoun)'
           rol:
-            es: "docencia (2023)"
-            en: "teaching (2023)"
+            es: 'docencia (2023)'
+            en: 'teaching (2023)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/menteneon"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/menteneon'
 
-        - nombre: "Joaquín Pérez"
+        - nombre: 'Joaquín Pérez'
           pronombres:
-            es: "(él)"
-            en: "(he)"
+            es: '(él)'
+            en: '(he)'
           rol:
-            es: "docencia (2023)"
-            en: "teaching (2023)"
+            es: 'docencia (2023)'
+            en: 'teaching (2023)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/usuario"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/usuario'
 
-        - nombre: "Sofía Sandoval"
+        - nombre: 'Sofía Sandoval'
           pronombres:
-            es: "(pronombre)"
-            en: "(pronoun)"
+            es: '(pronombre)'
+            en: '(pronoun)'
           rol:
-            es: "docencia, investigación (2023)"
-            en: "teaching, research (2023)"
+            es: 'docencia, investigación (2023)'
+            en: 'teaching, research (2023)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/ssofiasandoval"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/ssofiasandoval'
 
-        - nombre: "Ignacio Passalacqua"
+        - nombre: 'Ignacio Passalacqua'
           pronombres:
-            es: "(pronombre)"
-            en: "(pronoun)"
+            es: '(pronombre)'
+            en: '(pronoun)'
           rol:
-            es: "docencia, electrónica, programación (2022-2023)"
-            en: "teaching, electronics, programming (2022-2023)"
+            es: 'docencia, electrónica, programación (2022-2023)'
+            en: 'teaching, electronics, programming (2022-2023)'
           descripcion:
-            es: "Breve descripción del trabajo realizado en Piruetas."
-            en: "Brief description of the work carried out at Piruetas."
+            es: 'Breve descripción del trabajo realizado en Piruetas.'
+            en: 'Brief description of the work carried out at Piruetas.'
           links:
             - label:
-                es: "github"
-                en: "github"
-              url: "https://github.com/usuario"
+                es: 'github'
+                en: 'github'
+              url: 'https://github.com/usuario'
 
 clientes:
   ui:
     title:
-      es: "clientes"
-      en: "clients"
+      es: 'clientes'
+      en: 'clients'
   clientes:
-    - nombre: "bibliotecaCuir"
+    - nombre: 'bibliotecaCuir'
       anho: 2026
-    - nombre: "Sokio"
+    - nombre: 'Sokio'
       anho: 2025
-    - nombre: "Universidad Diego Portales"
+    - nombre: 'Universidad Diego Portales'
       anho: 2024
 
 proyectos:
   proyectos:
     - titulo:
-        es: "parla"
-        en: "parla"
+        es: 'parla'
+        en: 'parla'
       meta:
-        es: "2025"
-        en: "2025"
+        es: '2025'
+        en: '2025'
       tag:
-        es: "popusintes"
-        en: "popusynths"
-      image: "/media/proyectos/parla-canasto.jpg"
+        es: 'popusintes'
+        en: 'popusynths'
+      image: '/media/proyectos/parla-canasto.jpg'
       alt:
-        es: "parla"
-        en: "parla"
-      link: "/proyectos/parla/index.html"
+        es: 'parla'
+        en: 'parla'
+      link: '/proyectos/parla/index.html'
       subtitulo:
-        es: "pequeño parlante con amplificador mono para sintetizadores"
-        en: "small speaker with mono amplifier for synthesizers"
+        es: 'pequeño parlante con amplificador mono para sintetizadores'
+        en: 'small speaker with mono amplifier for synthesizers'
 
     - titulo:
-        es: "osca"
-        en: "osca"
+        es: 'osca'
+        en: 'osca'
       meta:
-        es: "soon"
-        en: "soon"
+        es: 'soon'
+        en: 'soon'
       tag:
-        es: "popusintes"
-        en: "popusynths"
-      image: "/media/proyectos/osca.jpg"
+        es: 'popusintes'
+        en: 'popusynths'
+      image: '/media/proyectos/osca.jpg'
       alt:
-        es: "osca"
-        en: "osca"
-      link: "/proyectos/osca/index.html"
+        es: 'osca'
+        en: 'osca'
+      link: '/proyectos/osca/index.html'
       subtitulo:
-        es: "proyecto en desarrollo"
-        en: "project in development"
+        es: 'proyecto en desarrollo'
+        en: 'project in development'
 
     - titulo:
-        es: "redondela"
-        en: "redondela"
+        es: 'redondela'
+        en: 'redondela'
       meta:
-        es: "software"
-        en: "software"
+        es: 'software'
+        en: 'software'
       tag:
-        es: "software"
-        en: "software"
-      image: "/media/proyectos/redondela.jpg"
+        es: 'software'
+        en: 'software'
+      image: '/media/proyectos/redondela.jpg'
       alt:
-        es: "redondela"
-        en: "redondela"
-      link: "/proyectos/redondela/index.html"
+        es: 'redondela'
+        en: 'redondela'
+      link: '/proyectos/redondela/index.html'
       subtitulo:
-        es: "herramienta de software"
-        en: "software tool"
+        es: 'herramienta de software'
+        en: 'software tool'
 
     - titulo:
-        es: "gerassic organ"
-        en: "gerassic organ"
+        es: 'gerassic organ'
+        en: 'gerassic organ'
       meta:
-        es: "hardware"
-        en: "hardware"
+        es: 'hardware'
+        en: 'hardware'
       tag:
-        es: "hardware"
-        en: "hardware"
-      image: "/media/proyectos/gerassic-organ.jpg"
+        es: 'hardware'
+        en: 'hardware'
+      image: '/media/proyectos/gerassic-organ.jpg'
       alt:
-        es: "gerassic organ"
-        en: "gerassic organ"
-      link: "/proyectos/gerassic-organ/index.html"
+        es: 'gerassic organ'
+        en: 'gerassic organ'
+      link: '/proyectos/gerassic-organ/index.html'
       subtitulo:
-        es: "instrumento electrónico / hardware"
-        en: "electronic instrument / hardware"
+        es: 'instrumento electrónico / hardware'
+        en: 'electronic instrument / hardware'
 
     - titulo:
-        es: "talleres momentos"
-        en: "talleres momentos"
+        es: 'talleres momentos'
+        en: 'talleres momentos'
       meta:
-        es: "2023"
-        en: "2023"
+        es: '2023'
+        en: '2023'
       tag:
-        es: "enseñanza"
-        en: "teaching"
-      image: "/media/proyectos/talleres-momentos.jpg"
+        es: 'enseñanza'
+        en: 'teaching'
+      image: '/media/proyectos/talleres-momentos.jpg'
       alt:
-        es: "talleres momentos"
-        en: "talleres momentos"
-      link: "/proyectos/talleres-momentos/index.html"
+        es: 'talleres momentos'
+        en: 'talleres momentos'
+      link: '/proyectos/talleres-momentos/index.html'
       subtitulo:
-        es: "actividades de enseñanza y workshops"
-        en: "teaching activities and workshops"
+        es: 'actividades de enseñanza y workshops'
+        en: 'teaching activities and workshops'
 
 parla:
   ui:
     title:
-      es: "parla"
-      en: "parla"
+      es: 'parla'
+      en: 'parla'
     meta:
-      es: "2025"
-      en: "2025"
+      es: '2025'
+      en: '2025'
     tag:
-      es: "popusintes"
-      en: "popusynths"
+      es: 'popusintes'
+      en: 'popusynths'
 
   hero:
-    image: "/media/proyectos/parla-canasto.jpg"
+    image: '/media/proyectos/parla-canasto.jpg'
     alt:
-      es: "parla"
-      en: "parla"
+      es: 'parla'
+      en: 'parla'
 
   sections:
     - id: descripcion
       title:
-        es: "descripción"
-        en: "description"
+        es: 'descripción'
+        en: 'description'
       content:
         es: |-
           parla es un proyecto de piruetas, en colaboración con
@@ -388,8 +388,8 @@ parla:
 
     - id: producto
       title:
-        es: "producto"
-        en: "product"
+        es: 'producto'
+        en: 'product'
       content:
         es: |-
           para este proyecto hicimos 50 PCBs, de las cuales 5
@@ -412,16 +412,16 @@ parla:
 
     - id: nota
       title:
-        es: "nota técnica"
-        en: "technical note"
+        es: 'nota técnica'
+        en: 'technical note'
       content:
-        es: "👁️ <strong>nota:</strong> para esta primera versión se requiere una correccion de polaridad vcc y gnd."
-        en: "👁️ <strong>note:</strong> for this first version a VCC and GND polarity correction is required."
+        es: '👁️ <strong>nota:</strong> para esta primera versión se requiere una correccion de polaridad vcc y gnd.'
+        en: '👁️ <strong>note:</strong> for this first version a VCC and GND polarity correction is required.'
 
     - id: creditos
       title:
-        es: "créditos"
-        en: "collabs"
+        es: 'créditos'
+        en: 'collabs'
       content:
         es: |-
           empresa: @piruetas.xyz
@@ -438,35 +438,24 @@ parla:
           logistics: @jnsplv
           font: @uno_ca
 
-investigacion-dibujo-axidraw:
-  ui:
-    title:
-      es: "página en mantención"
-      en: "under maintenance"
-  sections:
-    - title: {}
-      content:
-        es: "próximamente más información sobre este proyecto."
-        en: "more information about this project coming soon."
-
 investigacion-gerassic-organ:
   ui:
     title:
-      es: "página en mantención"
-      en: "under maintenance"
+      es: 'página en mantención'
+      en: 'under maintenance'
   sections:
     - title: {}
       content:
-        es: "próximamente más información sobre este proyecto."
-        en: "more information about this project coming soon."
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
 
 maquinitas-tidal:
   ui:
     title:
-      es: "página en mantención"
-      en: "under maintenance"
+      es: 'página en mantención'
+      en: 'under maintenance'
   sections:
     - title: {}
       content:
-        es: "próximamente más información sobre este proyecto."
-        en: "more information about this project coming soon."
+        es: 'próximamente más información sobre este proyecto.'
+        en: 'more information about this project coming soon.'
