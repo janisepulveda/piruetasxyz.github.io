@@ -384,8 +384,9 @@
     (data.clientes || []).forEach((c) => {
       const row = document.createElement('div');
       row.className = 'cliente-item';
-      const name = document.createElement('div');
+      const name = document.createElement(c.enlace ? 'a' : 'div');
       name.className = 'cliente-nombre';
+      if (c.enlace) name.href = c.enlace;
       name.textContent = c.nombre || '';
       const year = document.createElement('div');
       year.className = 'cliente-ano';
