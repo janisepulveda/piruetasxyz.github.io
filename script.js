@@ -3,7 +3,7 @@ const langSpans = langBtn.querySelectorAll('[data-lang]');
 
 function updateLangBtn(lang) {
     langSpans.forEach((span) => {
-        span.classList.toggle('lang-active', span.dataset.lang === lang);
+        span.classList.toggle('toggle-active', span.dataset.lang === lang);
     });
 }
 
@@ -36,13 +36,4 @@ langBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const next = document.documentElement.getAttribute('lang') === 'en' ? 'es' : 'en';
     applyLang(next);
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.right').addEventListener('click', () => {
-        const menu = document.getElementById('divLeftMenu');
-        if (menu.classList.contains('active')) {
-            setMenuOpen(false);
-        }
-    });
 });

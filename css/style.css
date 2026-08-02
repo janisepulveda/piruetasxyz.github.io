@@ -24,11 +24,11 @@ body {
   cursor: pointer;
 }
 
-#lang-btn span {
+#topbar-buttons span {
   opacity: 0.4;
 }
 
-#lang-btn span.lang-active {
+#topbar-buttons span.toggle-active {
   opacity: 1;
   font-weight: bold;
   text-decoration: underline;

@@ -2,7 +2,7 @@ document.body.insertAdjacentHTML(
   'afterbegin',
   `
     <div id="topbar-buttons">
-        <button id="menu-btn" class="boton-piruetas">menú</button>
+        <button id="menu-btn" class="boton-piruetas"><span data-state="abrir">abrir</span> / <span data-state="cerrar">cerrar</span></button>
         <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
     </div>
 `,
@@ -59,10 +59,13 @@ document.getElementById('divLeftMenu').innerHTML = navbarContent;
 
 const menuBtn = document.getElementById('menu-btn');
 const menuSide = document.getElementById('divLeftMenu');
+const menuSpans = menuBtn.querySelectorAll('[data-state]');
 
 window.setMenuOpen = function (isOpen) {
   menuSide.classList.toggle('active', isOpen);
-  menuBtn.innerText = isOpen ? 'cerrar' : 'menú';
+  menuSpans.forEach((span) => {
+    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'cerrar' : 'abrir'));
+  });
   localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
 };
 
