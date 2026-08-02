@@ -178,22 +178,32 @@
     if (h1es) h1es.textContent = (data.ui && data.ui.title && data.ui.title.es) || '';
     if (h1en) h1en.textContent = (data.ui && data.ui.title && data.ui.title.en) || '';
 
-    const h2es = document.querySelector('h2.cajita .es');
-    const h2en = document.querySelector('h2.cajita .en');
-    if (h2es) h2es.textContent = (data.ui && data.ui.collaborators_header && data.ui.collaborators_header.es) || '';
-    if (h2en) h2en.textContent = (data.ui && data.ui.collaborators_header && data.ui.collaborators_header.en) || '';
+    const gruposContainer = document.getElementById('grupos');
+    if (!gruposContainer) {
+      console.warn('No grupos container found (expected #grupos)');
+      return;
+    }
+    gruposContainer.innerHTML = '';
 
-    const miembrosContainer = document.getElementById('miembros');
-    const colaboradoresContainer = document.getElementById('colaboradores');
-    if (miembrosContainer) miembrosContainer.innerHTML = '';
-    if (colaboradoresContainer) colaboradoresContainer.innerHTML = '';
+    (data.grupos || []).forEach((grupo) => {
+      const h2 = document.createElement('h2');
+      h2.className = 'cajita';
+      const h2es = document.createElement('span');
+      h2es.className = 'es';
+      h2es.textContent = (grupo.header && grupo.header.es) || '';
+      const h2en = document.createElement('span');
+      h2en.className = 'en';
+      h2en.textContent = (grupo.header && grupo.header.en) || '';
+      h2.appendChild(h2es);
+      h2.appendChild(h2en);
+      gruposContainer.appendChild(h2);
 
-    (data.miembros || []).forEach((m) => {
-      if (miembrosContainer) miembrosContainer.appendChild(createPersonaCard(m));
-    });
-
-    (data.colaboradores || []).forEach((c) => {
-      if (colaboradoresContainer) colaboradoresContainer.appendChild(createPersonaCard(c));
+      const list = document.createElement('div');
+      list.className = 'personas-list';
+      (grupo.miembros || []).forEach((m) => {
+        list.appendChild(createPersonaCard(m));
+      });
+      gruposContainer.appendChild(list);
     });
   }
 
