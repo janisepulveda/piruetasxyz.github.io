@@ -1,15 +1,24 @@
-document.body.insertAdjacentHTML('afterbegin', '<button id="menu-btn" class="boton-piruetas">menú</button>');
-document.body.insertAdjacentHTML('afterbegin', '<button id="lang-btn" class="boton-piruetas">es</button>');
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  '<button id="menu-btn" class="boton-piruetas">menú</button>',
+);
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  '<button id="lang-btn" class="boton-piruetas">es</button>',
+);
 
-document.body.insertAdjacentHTML('beforeend', `
+document.body.insertAdjacentHTML(
+  'beforeend',
+  `
     <footer class="colophon-banner">
         <span class="es">piruetas xyz — hecho a mano con html, css y js.</span>
         <span class="en">piruetas xyz — handmade with html, css and js.</span>
     </footer>
-`);
+`,
+);
 
 const navbarContent = `
-    <h1><a href="/index.html">home</a></h1>
+    <h1><a href="/index.html">inicio</a></h1>
     <h1><a href="/proyectos/index.html">proyectos</a></h1>
 
     <h1>
@@ -51,14 +60,14 @@ const menuBtn = document.getElementById('menu-btn');
 const menuSide = document.getElementById('divLeftMenu');
 
 window.setMenuOpen = function (isOpen) {
-    menuSide.classList.toggle('active', isOpen);
-    menuBtn.innerText = isOpen ? 'cerrar' : 'menú';
-    localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
+  menuSide.classList.toggle('active', isOpen);
+  menuBtn.innerText = isOpen ? 'cerrar' : 'menú';
+  localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
 };
 
 setMenuOpen(localStorage.getItem('menuOpen') === 'true');
 
 menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setMenuOpen(!menuSide.classList.contains('active'));
+  e.stopPropagation();
+  setMenuOpen(!menuSide.classList.contains('active'));
 });
