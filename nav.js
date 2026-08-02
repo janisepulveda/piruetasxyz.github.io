@@ -68,6 +68,15 @@ window.setMenuOpen = function (isOpen) {
 
 setMenuOpen(localStorage.getItem('menuOpen') === 'true');
 
+// enable the slide transition only after the restored state has
+// painted once, so navigating between pages doesn't replay the
+// open/close animation on load
+requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+        document.body.classList.add('menu-ready');
+    });
+});
+
 menuBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   setMenuOpen(!menuSide.classList.contains('active'));

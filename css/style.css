@@ -38,12 +38,11 @@ body {
   background-color: pink;
   position: fixed;
   top: 0;
-  left: -260px;
-  width: 260px;
+  left: -220px;
+  width: 220px;
   height: 100vh;
   padding: 80px 20px 20px 20px;
   z-index: 2000;
-  transition: left 0.3s ease-in-out;
   border: none;
   box-shadow: 10px 0px 0px pink;
   overflow-y: auto;
@@ -57,12 +56,19 @@ body {
   background-color: greenyellow;
   min-height: 100vh;
   padding: 80px 40px 120px 40px;
+}
+
+body.menu-ready .left {
+  transition: left 0.3s ease-in-out;
+}
+
+body.menu-ready .right {
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .left.active~.right {
-  transform: translateX(260px);
-  width: calc(100% - 260px);
+  transform: translateX(220px);
+  width: calc(100% - 220px);
 }
 
 .contenedor-producto {
