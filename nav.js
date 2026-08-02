@@ -2,8 +2,17 @@ document.body.insertAdjacentHTML(
   'afterbegin',
   `
     <div id="topbar-buttons">
-        <button id="menu-btn" class="boton-piruetas"><span data-state="abrir">abrir</span> / <span data-state="cerrar">cerrar</span></button>
-        <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
+        <div class="topbar-row">
+            <span class="es">menú:</span><span class="en">menu:</span>
+            <button id="menu-btn" class="boton-piruetas">
+                <span class="es"><span data-state="show">mostrar</span> / <span data-state="hide">esconder</span></span>
+                <span class="en"><span data-state="show">show</span> / <span data-state="hide">hide</span></span>
+            </button>
+        </div>
+        <div class="topbar-row">
+            <span class="es">len:</span><span class="en">lan:</span>
+            <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
+        </div>
     </div>
 `,
 );
@@ -64,7 +73,7 @@ const menuSpans = menuBtn.querySelectorAll('[data-state]');
 window.setMenuOpen = function (isOpen) {
   menuSide.classList.toggle('active', isOpen);
   menuSpans.forEach((span) => {
-    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'cerrar' : 'abrir'));
+    span.classList.toggle('toggle-active', span.dataset.state === (isOpen ? 'hide' : 'show'));
   });
   localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
 };

@@ -16,6 +16,14 @@ body {
   left: 15px;
   z-index: 3000;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 10pt;
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -24,11 +32,12 @@ body {
   cursor: pointer;
 }
 
-#topbar-buttons span {
+#topbar-buttons [data-state],
+#topbar-buttons [data-lang] {
   opacity: 0.4;
 }
 
-#topbar-buttons span.toggle-active {
+#topbar-buttons .toggle-active {
   opacity: 1;
   font-weight: bold;
   text-decoration: underline;
