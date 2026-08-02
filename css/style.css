@@ -442,6 +442,21 @@ html[lang="es"] .en {
   text-decoration: underline;
 }
 
+#divLeftMenu a.nav-active {
+  display: inline-block;
+  border: 1px solid black;
+  box-shadow: 3px 5px 0px black;
+  padding: 2px 8px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+#divLeftMenu ol a.nav-active {
+  padding: 1px 6px;
+  box-shadow: 2px 3px 0px black;
+}
+
 /* Clientes list styling */
 .clientes-list {
   display: flex;
