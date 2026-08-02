@@ -5,13 +5,21 @@
    - Depends on js-yaml being available as a global (jsyaml or JS_YAML)
 */
 (function () {
-  const dataPage = document.body && document.body.dataset && document.body.dataset.page;
+  const dataPage =
+    document.body &&
+    document.body.dataset &&
+    document.body.dataset.page;
   if (!dataPage) return;
 
   // Build candidate YAML locations, with support for language folders (es/en)
-  const pageLang = (document.documentElement && document.documentElement.lang) || (document.body && document.body.lang) || '';
+  const pageLang =
+    (document.documentElement && document.documentElement.lang) ||
+    (document.body && document.body.lang) ||
+    '';
   const candidatesSet = new Set();
-  function addCandidate(p) { if (p) candidatesSet.add(p); }
+  function addCandidate(p) {
+    if (p) candidatesSet.add(p);
+  }
 
   // Special handling for the projects index page
   if (dataPage === 'proyectos' || dataPage === 'projects') {
@@ -27,8 +35,12 @@
   } else {
     // For page-specific YAML (e.g., project detail like 'parla') prefer same-folder yaml and projects folder
     if (pageLang) {
-      addCandidate(`${pageLang}/projects/${dataPage}/${dataPage}.yaml`);
-      addCandidate(`${pageLang}/proyectos/${dataPage}/${dataPage}.yaml`);
+      addCandidate(
+        `${pageLang}/projects/${dataPage}/${dataPage}.yaml`,
+      );
+      addCandidate(
+        `${pageLang}/proyectos/${dataPage}/${dataPage}.yaml`,
+      );
       addCandidate(`${pageLang}/${dataPage}/${dataPage}.yaml`);
     }
     addCandidate(`proyectos/${dataPage}/${dataPage}.yaml`);
@@ -44,7 +56,12 @@
   const yamlCandidates = Array.from(candidatesSet);
 
   function findYamlLib() {
-    return window.jsyaml || window.JS_YAML || window.jsyaml || (window.jsyaml_min && window.jsyaml_min);
+    return (
+      window.jsyaml ||
+      window.JS_YAML ||
+      window.jsyaml ||
+      (window.jsyaml_min && window.jsyaml_min)
+    );
   }
 
   async function fetchFirstSuccessful(urls) {
@@ -58,7 +75,9 @@
         // try next
       }
     }
-    throw new Error('No YAML file found among candidates: ' + urls.join(', '));
+    throw new Error(
+      'No YAML file found among candidates: ' + urls.join(', '),
+    );
   }
 
   function createPersonaCard(p) {
@@ -175,8 +194,12 @@
   function renderPersonas(data) {
     const h1es = document.querySelector('h1.cajita .es');
     const h1en = document.querySelector('h1.cajita .en');
-    if (h1es) h1es.textContent = (data.ui && data.ui.title && data.ui.title.es) || '';
-    if (h1en) h1en.textContent = (data.ui && data.ui.title && data.ui.title.en) || '';
+    if (h1es)
+      h1es.textContent =
+        (data.ui && data.ui.title && data.ui.title.es) || '';
+    if (h1en)
+      h1en.textContent =
+        (data.ui && data.ui.title && data.ui.title.en) || '';
 
     const gruposContainer = document.getElementById('grupos');
     if (!gruposContainer) {
@@ -209,9 +232,13 @@
 
   function renderProyectos(data) {
     // expects data.proyectos array with fields: meta, tag, image, link, title, subtitle
-    const container = document.getElementById('proyectos') || document.querySelector('.proyectos-list');
+    const container =
+      document.getElementById('proyectos') ||
+      document.querySelector('.proyectos-list');
     if (!container) {
-      console.warn('No proyectos container found (expected #proyectos or .proyectos-list)');
+      console.warn(
+        'No proyectos container found (expected #proyectos or .proyectos-list)',
+      );
       return;
     }
     container.innerHTML = '';
@@ -224,12 +251,18 @@
       header.className = 'proyecto-header';
       const metaLeft = document.createElement('div');
       metaLeft.className = 'proyecto-meta-left';
-      metaLeft.textContent = typeof p.meta === 'object' ? (p.meta.es || p.meta.en || '') : (p.meta || '');
+      metaLeft.textContent =
+        typeof p.meta === 'object'
+          ? p.meta.es || p.meta.en || ''
+          : p.meta || '';
       header.appendChild(metaLeft);
       if (p.tag) {
         const tag = document.createElement('div');
         tag.className = 'proyecto-tag';
-        tag.textContent = typeof p.tag === 'object' ? (p.tag.es || p.tag.en || '') : p.tag;
+        tag.textContent =
+          typeof p.tag === 'object'
+            ? p.tag.es || p.tag.en || ''
+            : p.tag;
         header.appendChild(tag);
       }
 
@@ -241,8 +274,13 @@
       imgWrap.className = 'proyecto-imgwrap';
       const img = document.createElement('img');
       img.src = p.image || '/media/piruetas-v0.jpg';
-      if (p.alt && typeof p.alt === 'object') img.alt = p.alt.es || p.alt.en || '';
-      else img.alt = p.alt || (p.titulo && (p.titulo.es || p.titulo.en)) || 'piruetas';
+      if (p.alt && typeof p.alt === 'object')
+        img.alt = p.alt.es || p.alt.en || '';
+      else
+        img.alt =
+          p.alt ||
+          (p.titulo && (p.titulo.es || p.titulo.en)) ||
+          'piruetas';
       imgWrap.appendChild(img);
       link.appendChild(imgWrap);
 
@@ -263,7 +301,10 @@
       }
       const sub = document.createElement('p');
       sub.className = 'proyecto-sub';
-      sub.textContent = typeof p.subtitulo === 'object' ? (p.subtitulo.es || p.subtitulo.en || '') : (p.subtitulo || '');
+      sub.textContent =
+        typeof p.subtitulo === 'object'
+          ? p.subtitulo.es || p.subtitulo.en || ''
+          : p.subtitulo || '';
 
       article.appendChild(header);
       article.appendChild(link);
@@ -271,22 +312,30 @@
       article.appendChild(sub);
       container.appendChild(article);
     });
-    
+
     // If a hero exists on the page, setup rotating hero from projects
     const hero = document.getElementById('hero-img');
     const heroLink = document.getElementById('hero-link');
     const heroTitleEs = document.querySelector('.hero-title .es');
     const heroTitleEn = document.querySelector('.hero-title .en');
-    const heroDescEs = document.querySelector('.hero-description .es');
-    const heroDescEn = document.querySelector('.hero-description .en');
+    const heroDescEs = document.querySelector(
+      '.hero-description .es',
+    );
+    const heroDescEn = document.querySelector(
+      '.hero-description .en',
+    );
     if (hero && (data.proyectos || []).length) {
       // pick specific projects to rotate (parla and redondela)
       const desired = ['parla', 'redondela'];
       const candidates = (data.proyectos || []).filter((p) => {
-        const t = ((p.titulo && (p.titulo.es || p.titulo.en)) || '').toString().toLowerCase();
+        const t = ((p.titulo && (p.titulo.es || p.titulo.en)) || '')
+          .toString()
+          .toLowerCase();
         return desired.includes(t);
       });
-      const rotList = candidates.length ? candidates : (data.proyectos || []);
+      const rotList = candidates.length
+        ? candidates
+        : data.proyectos || [];
       let idx = 0;
       // ensure placeholder initially
       hero.src = hero.src || '/media/piruetas-v0.jpg';
@@ -294,12 +343,21 @@
         const p = rotList[i];
         if (!p) return;
         hero.src = p.image || '/media/piruetas-v0.jpg';
-        hero.alt = (p.alt && (p.alt.es || p.alt.en)) || (p.titulo && (p.titulo.es || p.titulo.en)) || 'piruetas';
+        hero.alt =
+          (p.alt && (p.alt.es || p.alt.en)) ||
+          (p.titulo && (p.titulo.es || p.titulo.en)) ||
+          'piruetas';
         if (heroLink && p.link) heroLink.href = p.link;
-        if (heroTitleEs) heroTitleEs.textContent = (p.titulo && p.titulo.es) || '';
-        if (heroTitleEn) heroTitleEn.textContent = (p.titulo && p.titulo.en) || '';
-        if (heroDescEs) heroDescEs.textContent = (p.subtitulo && p.subtitulo.es) || '';
-        if (heroDescEn) heroDescEn.textContent = (p.subtitulo && p.subtitulo.en) || '';
+        if (heroTitleEs)
+          heroTitleEs.textContent = (p.titulo && p.titulo.es) || '';
+        if (heroTitleEn)
+          heroTitleEn.textContent = (p.titulo && p.titulo.en) || '';
+        if (heroDescEs)
+          heroDescEs.textContent =
+            (p.subtitulo && p.subtitulo.es) || '';
+        if (heroDescEn)
+          heroDescEn.textContent =
+            (p.subtitulo && p.subtitulo.en) || '';
       }
       show(idx);
       setInterval(() => {
@@ -310,7 +368,9 @@
   }
 
   function renderProjectDetail(data) {
-    const container = document.querySelector('.contenido-texto') || document.querySelector('.project-content');
+    const container =
+      document.querySelector('.contenido-texto') ||
+      document.querySelector('.project-content');
     if (!container) {
       console.warn('No project content container found');
       return;
@@ -369,12 +429,18 @@
   function renderClientes(data) {
     const h1es = document.querySelector('h1.cajita .es');
     const h1en = document.querySelector('h1.cajita .en');
-    if (h1es) h1es.textContent = (data.ui && data.ui.title && data.ui.title.es) || '';
-    if (h1en) h1en.textContent = (data.ui && data.ui.title && data.ui.title.en) || '';
+    if (h1es)
+      h1es.textContent =
+        (data.ui && data.ui.title && data.ui.title.es) || '';
+    if (h1en)
+      h1en.textContent =
+        (data.ui && data.ui.title && data.ui.title.en) || '';
 
     const container = document.getElementById('clientes');
     if (!container) {
-      console.warn('No clientes container found (expected #clientes)');
+      console.warn(
+        'No clientes container found (expected #clientes)',
+      );
       return;
     }
     container.innerHTML = '';
@@ -386,7 +452,7 @@
       name.textContent = c.nombre || '';
       const year = document.createElement('div');
       year.className = 'cliente-ano';
-      year.textContent = c.ano ? String(c.ano) : '';
+      year.textContent = c.ano ? String(c.anho) : '';
       row.appendChild(name);
       row.appendChild(year);
       container.appendChild(row);
@@ -396,12 +462,15 @@
   (async function main() {
     const yamlLib = findYamlLib();
     if (!yamlLib || typeof yamlLib.load !== 'function') {
-      console.error('render.js: js-yaml library not found. Include js-yaml via CDN or lib/js-yaml.min.js');
+      console.error(
+        'render.js: js-yaml library not found. Include js-yaml via CDN or lib/js-yaml.min.js',
+      );
       return;
     }
 
     try {
-      const { text, url } = await fetchFirstSuccessful(yamlCandidates);
+      const { text, url } =
+        await fetchFirstSuccessful(yamlCandidates);
       const data = yamlLib.load(text);
       if (!data) throw new Error('Parsed YAML is empty');
 
@@ -412,7 +481,11 @@
         renderPersonas(data);
       } else if (dataPage === 'clientes') {
         renderClientes(data);
-      } else if (dataPage === 'proyectos' || dataPage === 'projects' || data.proyectos) {
+      } else if (
+        dataPage === 'proyectos' ||
+        dataPage === 'projects' ||
+        data.proyectos
+      ) {
         renderProyectos(data);
       } else {
         console.warn('render.js: unsupported data-page', dataPage);

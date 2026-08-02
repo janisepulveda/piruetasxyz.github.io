@@ -1,11 +1,11 @@
 ui:
   title:
-    es: "clientes"
-    en: "clients"
+    es: 'clientes'
+    en: 'clients'
 clientes:
-  - nombre: "bibliotecaCuir"
-    ano: 2026
-  - nombre: "Sokio"
-    ano: 2025
-  - nombre: "Universidad Diego Portales"
-    ano: 2024
+  - nombre: 'bibliotecaCuir'
+    anho: 2026
+  - nombre: 'Sokio'
+    anho: 2025
+  - nombre: 'Universidad Diego Portales'
+    anho: 2024
