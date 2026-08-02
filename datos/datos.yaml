@@ -1,3 +1,18 @@
+inicio:
+  en: 'home'
+  es: 'inicio'
+  sections:
+    - title: {}
+      content:
+        es: 'piruetas SpA es un estudio chileno de arte electrónico y computacional fundado en 2022.'
+        en: 'piruetas SpA is a chilean studio founded in 2022, focusing on electronic and computational art.'
+    - title:
+        es: 'enlaces'
+        en: 'links'
+      content:
+        es: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
+        en: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
+
 personas:
   en: 'people'
   es: 'personas'
@@ -491,21 +506,6 @@ talleres-momentos:
       content:
         es: 'próximamente más información sobre este proyecto.'
         en: 'more information about this project coming soon.'
-
-inicio:
-  en: 'home'
-  es: 'inicio'
-  sections:
-    - title: {}
-      content:
-        es: 'lorem ipsum'
-        en: 'lorem ipsum'
-    - title:
-        es: 'enlaces'
-        en: 'links'
-      content:
-        es: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
-        en: '<a href="https://github.com/piruetasxyz">github.com/piruetasxyz</a><br><a href="https://instagram.com/piruetas.xyz">instagram.com/piruetas.xyz</a>'
 
 tienda:
   en: 'store'

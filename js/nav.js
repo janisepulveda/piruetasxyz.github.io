@@ -23,7 +23,7 @@ document.body.insertAdjacentHTML(
     <footer class="colophon-banner">
         <div class="colophon-line">
             <span class="es">piruetas.xyz está hecho a mano con HTML, CSS y JS</span>
-            <span class="en">piruetas.xyz is handmade with HTML, CSS and JSs</span>
+            <span class="en">piruetas.xyz is handmade with HTML, CSS and JS</span>
         </div>
         <div class="colophon-line">
             <span class="es">sin rastreo, sin cookies, sin contador de visitas</span>
