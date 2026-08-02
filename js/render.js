@@ -104,25 +104,25 @@
       info.appendChild(pen);
     }
 
-    if (Array.isArray(p.links) && p.links.length) {
+    if (Array.isArray(p.enlaces) && p.enlaces.length) {
       const links = document.createElement('div');
       links.className = 'persona-links';
-      p.links.forEach((l) => {
+      p.enlaces.forEach((l) => {
         const a = document.createElement('a');
         a.href = l.url || '#';
         a.target = '_blank';
         a.className = 'boton-piruetas';
-        if (l.label && typeof l.label === 'object') {
+        if (l.etiqueta && typeof l.etiqueta === 'object') {
           const les = document.createElement('span');
           les.className = 'es';
-          les.textContent = l.label.es || '';
+          les.textContent = l.etiqueta.es || '';
           const len = document.createElement('span');
           len.className = 'en';
-          len.textContent = l.label.en || '';
+          len.textContent = l.etiqueta.en || '';
           a.appendChild(les);
           a.appendChild(len);
         } else {
-          a.textContent = l.label || l.url || 'link';
+          a.textContent = l.etiqueta || l.url || 'link';
         }
         links.appendChild(a);
       });
@@ -151,10 +151,10 @@
       h2.className = 'cajita';
       const h2es = document.createElement('span');
       h2es.className = 'es';
-      h2es.textContent = (grupo.header && grupo.header.es) || '';
+      h2es.textContent = (grupo.encabezado && grupo.encabezado.es) || '';
       const h2en = document.createElement('span');
       h2en.className = 'en';
-      h2en.textContent = (grupo.header && grupo.header.en) || '';
+      h2en.textContent = (grupo.encabezado && grupo.encabezado.en) || '';
       h2.appendChild(h2es);
       h2.appendChild(h2en);
       gruposContainer.appendChild(h2);
@@ -194,19 +194,19 @@
           ? p.meta.es || p.meta.en || ''
           : p.meta || '';
       header.appendChild(metaLeft);
-      if (p.tag) {
+      if (p.etiqueta) {
         const tag = document.createElement('div');
         tag.className = 'proyecto-tag';
         tag.textContent =
-          typeof p.tag === 'object'
-            ? p.tag.es || p.tag.en || ''
-            : p.tag;
+          typeof p.etiqueta === 'object'
+            ? p.etiqueta.es || p.etiqueta.en || ''
+            : p.etiqueta;
         header.appendChild(tag);
       }
 
       // image wrapped in link
-      const link = document.createElement(p.link ? 'a' : 'div');
-      if (p.link) link.href = p.link;
+      const link = document.createElement(p.enlace ? 'a' : 'div');
+      if (p.enlace) link.href = p.enlace;
       link.className = 'proyecto-link';
       const imgWrap = document.createElement('div');
       imgWrap.className = 'proyecto-imgwrap';
@@ -285,7 +285,7 @@
           (p.alt && (p.alt.es || p.alt.en)) ||
           (p.titulo && (p.titulo.es || p.titulo.en)) ||
           'piruetas';
-        if (heroLink && p.link) heroLink.href = p.link;
+        if (heroLink && p.enlace) heroLink.href = p.enlace;
         if (heroTitleEs)
           heroTitleEs.textContent = (p.titulo && p.titulo.es) || '';
         if (heroTitleEn)

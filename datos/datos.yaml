@@ -19,7 +19,7 @@ personas:
 
   grupos:
     - id: empleades
-      header:
+      encabezado:
         es: 'empleades'
         en: 'employees'
       miembros:
@@ -55,16 +55,16 @@ personas:
               Chile. Their research focuses on human–computer interfaces,
               open-source parametric computational design, and the design
               of electronic musical instruments.
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'sitio'
                 en: 'website'
               url: 'https://montoyamoraga.io/'
-            - label:
+            - etiqueta:
                 es: 'instagram'
                 en: 'instagram'
               url: 'https://www.instagram.com/montoyamoraga/?hl=es'
-            - label:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/montoyamoraga'
@@ -88,22 +88,22 @@ personas:
               Universidad Diego Portales (2025) and is currently a
               Master's student in Advanced Design at the Pontificia
               Universidad Católica de Chile.
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'sitio'
                 en: 'website'
               url: 'https://janisepulveda.cl/'
-            - label:
+            - etiqueta:
                 es: 'instagram'
                 en: 'instagram'
               url: 'https://www.instagram.com/janisepulveda'
-            - label:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/janisepulveda'
 
     - id: colaboradores
-      header:
+      encabezado:
         es: 'colaboradores'
         en: 'collaborators'
       miembros:
@@ -117,14 +117,14 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/matbutom'
 
     - id: practicante
-      header:
+      encabezado:
         es: 'practicante'
         en: 'intern'
       miembros:
@@ -138,14 +138,14 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/Bernardita-Jesus'
 
     - id: exalumnes
-      header:
+      encabezado:
         es: 'exalumnes'
         en: 'alumni'
       miembros:
@@ -159,16 +159,16 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'sitio'
                 en: 'website'
               url: 'https://andresmartinm.github.io/portafolioAnim2023/'
-            - label:
+            - etiqueta:
                 es: 'instagram'
                 en: 'instagram'
               url: 'https://www.instagram.com/andresmartin_elmartin/'
-            - label:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/AndresMartinM'
@@ -183,8 +183,8 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/FranUDP'
@@ -199,8 +199,8 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/menteneon'
@@ -215,24 +215,24 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/usuario'
 
         - nombre: 'Sofía Sandoval'
           pronombres:
-            es: '(pronombre)'
-            en: '(pronoun)'
+            es: '(ella)'
+            en: '(she)'
           rol:
             es: 'docencia, investigación (2023)'
             en: 'teaching, research (2023)'
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/ssofiasandoval'
@@ -247,8 +247,8 @@ personas:
           descripcion:
             es: 'Breve descripción del trabajo realizado en Piruetas.'
             en: 'Brief description of the work carried out at Piruetas.'
-          links:
-            - label:
+          enlaces:
+            - etiqueta:
                 es: 'github'
                 en: 'github'
               url: 'https://github.com/usuario'
@@ -272,14 +272,14 @@ proyectos:
       meta:
         es: '2025'
         en: '2025'
-      tag:
+      etiqueta:
         es: 'popusintes'
-        en: 'popusynths'
+        en: 'popusintes'
       image: '/media/proyectos/parla-canasto.jpg'
       alt:
         es: 'parla'
         en: 'parla'
-      link: '/proyectos/parla/index.html'
+      enlace: '/proyectos/parla/index.html'
       subtitulo:
         es: 'pequeño parlante con amplificador mono para sintetizadores'
         en: 'small speaker with mono amplifier for synthesizers'
@@ -290,14 +290,14 @@ proyectos:
       meta:
         es: 'soon'
         en: 'soon'
-      tag:
+      etiqueta:
         es: 'popusintes'
-        en: 'popusynths'
+        en: 'popusintes'
       image: '/media/proyectos/osca.jpg'
       alt:
         es: 'osca'
         en: 'osca'
-      link: '/proyectos/osca/index.html'
+      enlace: '/proyectos/osca/index.html'
       subtitulo:
         es: 'proyecto en desarrollo'
         en: 'project in development'
@@ -308,14 +308,14 @@ proyectos:
       meta:
         es: 'software'
         en: 'software'
-      tag:
+      etiqueta:
         es: 'software'
         en: 'software'
       image: '/media/proyectos/redondela.jpg'
       alt:
         es: 'redondela'
         en: 'redondela'
-      link: '/proyectos/redondela/index.html'
+      enlace: '/proyectos/redondela/index.html'
       subtitulo:
         es: 'herramienta de software'
         en: 'software tool'
@@ -326,14 +326,14 @@ proyectos:
       meta:
         es: 'hardware'
         en: 'hardware'
-      tag:
+      etiqueta:
         es: 'hardware'
         en: 'hardware'
       image: '/media/proyectos/gerassic-organ.jpg'
       alt:
         es: 'gerassic organ'
         en: 'gerassic organ'
-      link: '/proyectos/gerassic-organ/index.html'
+      enlace: '/proyectos/gerassic-organ/index.html'
       subtitulo:
         es: 'instrumento electrónico / hardware'
         en: 'electronic instrument / hardware'
@@ -344,14 +344,14 @@ proyectos:
       meta:
         es: '2023'
         en: '2023'
-      tag:
+      etiqueta:
         es: 'enseñanza'
         en: 'teaching'
       image: '/media/proyectos/talleres-momentos.jpg'
       alt:
         es: 'talleres momentos'
         en: 'talleres momentos'
-      link: '/proyectos/talleres-momentos/index.html'
+      enlace: '/proyectos/talleres-momentos/index.html'
       subtitulo:
         es: 'actividades de enseñanza y workshops'
         en: 'teaching activities and workshops'
@@ -362,9 +362,9 @@ parla:
   meta:
     es: '2025'
     en: '2025'
-  tag:
+  etiqueta:
     es: 'popusintes'
-    en: 'popusynths'
+    en: 'popusintes'
 
   hero:
     image: '/media/proyectos/parla-canasto.jpg'
