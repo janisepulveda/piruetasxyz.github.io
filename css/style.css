@@ -41,11 +41,12 @@ body {
   background-color: greenyellow;
   min-height: 100vh;
   padding: 80px 40px 120px 40px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .left.active~.right {
   transform: translateX(260px);
+  width: calc(100% - 260px);
 }
 
 .contenedor-producto {
@@ -361,6 +362,7 @@ html[lang="es"] .en {
 
   .left.active~.right {
     transform: translateX(0);
+    width: 100%;
   }
 
   .left {
