@@ -1,7 +1,7 @@
 /* Global render.js
    - Detects `data-page` on <body>
-   - Loads YAML for that page (tries several relative paths)
-   - Renders two patterns: `personas` and `proyectos`
+   - Loads the single site-wide YAML file at /datos/datos.yaml
+   - Looks up data[dataPage] and renders it with the matching pattern
    - Depends on js-yaml being available as a global (jsyaml or JS_YAML)
 */
 (function () {
@@ -11,49 +11,7 @@
     document.body.dataset.page;
   if (!dataPage) return;
 
-  // Build candidate YAML locations, with support for language folders (es/en)
-  const pageLang =
-    (document.documentElement && document.documentElement.lang) ||
-    (document.body && document.body.lang) ||
-    '';
-  const candidatesSet = new Set();
-  function addCandidate(p) {
-    if (p) candidatesSet.add(p);
-  }
-
-  // Special handling for the projects index page
-  if (dataPage === 'proyectos' || dataPage === 'projects') {
-    if (pageLang) {
-      addCandidate(`${pageLang}/projects/projects.yaml`);
-      addCandidate(`${pageLang}/proyectos/proyectos.yaml`);
-    }
-    addCandidate(`projects/projects.yaml`);
-    addCandidate(`proyectos/proyectos.yaml`);
-    addCandidate(`./projects.yaml`);
-    addCandidate(`../projects/projects.yaml`);
-    addCandidate(`/projects/projects.yaml`);
-  } else {
-    // For page-specific YAML (e.g., project detail like 'parla') prefer same-folder yaml and projects folder
-    if (pageLang) {
-      addCandidate(
-        `${pageLang}/projects/${dataPage}/${dataPage}.yaml`,
-      );
-      addCandidate(
-        `${pageLang}/proyectos/${dataPage}/${dataPage}.yaml`,
-      );
-      addCandidate(`${pageLang}/${dataPage}/${dataPage}.yaml`);
-    }
-    addCandidate(`proyectos/${dataPage}/${dataPage}.yaml`);
-    addCandidate(`./${dataPage}.yaml`);
-    addCandidate(`${dataPage}.yaml`);
-    addCandidate(`../projects/${dataPage}/${dataPage}.yaml`);
-    addCandidate(`projects/${dataPage}/${dataPage}.yaml`);
-    addCandidate(`/projects/${dataPage}/${dataPage}.yaml`);
-    addCandidate(`../proyectos/${dataPage}/${dataPage}.yaml`);
-    addCandidate(`/proyectos/${dataPage}/${dataPage}.yaml`);
-  }
-
-  const yamlCandidates = Array.from(candidatesSet);
+  const DATOS_URL = '/datos/datos.yaml';
 
   function findYamlLib() {
     return (
@@ -61,22 +19,6 @@
       window.JS_YAML ||
       window.jsyaml ||
       (window.jsyaml_min && window.jsyaml_min)
-    );
-  }
-
-  async function fetchFirstSuccessful(urls) {
-    for (const u of urls) {
-      try {
-        const res = await fetch(u);
-        if (!res.ok) continue;
-        const text = await res.text();
-        return { text, url: u };
-      } catch (e) {
-        // try next
-      }
-    }
-    throw new Error(
-      'No YAML file found among candidates: ' + urls.join(', '),
     );
   }
 
@@ -452,7 +394,7 @@
       name.textContent = c.nombre || '';
       const year = document.createElement('div');
       year.className = 'cliente-ano';
-      year.textContent = c.ano ? String(c.anho) : '';
+      year.textContent = c.anho ? String(c.anho) : '';
       row.appendChild(name);
       row.appendChild(year);
       container.appendChild(row);
@@ -469,10 +411,18 @@
     }
 
     try {
-      const { text, url } =
-        await fetchFirstSuccessful(yamlCandidates);
-      const data = yamlLib.load(text);
-      if (!data) throw new Error('Parsed YAML is empty');
+      const res = await fetch(DATOS_URL);
+      if (!res.ok) throw new Error('Could not fetch ' + DATOS_URL);
+      const text = await res.text();
+      const datos = yamlLib.load(text);
+      if (!datos) throw new Error('Parsed YAML is empty');
+
+      const data = datos[dataPage];
+      if (!data) {
+        throw new Error(
+          'No entry for data-page "' + dataPage + '" in ' + DATOS_URL,
+        );
+      }
 
       if (data.sections) {
         // project detail YAML with sections
