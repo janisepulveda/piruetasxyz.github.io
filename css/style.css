@@ -18,6 +18,14 @@ body {
   cursor: pointer;
 }
 
+#lang-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 3000;
+  cursor: pointer;
+}
+
 .left {
   background-color: pink;
   position: fixed;

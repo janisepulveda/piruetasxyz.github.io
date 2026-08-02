@@ -1,4 +1,5 @@
 document.body.insertAdjacentHTML('afterbegin', '<button id="menu-btn" class="boton-piruetas">menú</button>');
+document.body.insertAdjacentHTML('afterbegin', '<button id="lang-btn" class="boton-piruetas">es</button>');
 
 document.body.insertAdjacentHTML('beforeend', `
     <footer class="colophon-banner">
@@ -8,10 +9,6 @@ document.body.insertAdjacentHTML('beforeend', `
 `);
 
 const navbarContent = `
-    <h1>
-        <a href="#" id="english">en</a> /
-        <a href="#" id="espanol">es</a>
-    </h1>
     <h1><a href="/index.html">home</a></h1>
     <h1><a href="/proyectos/index.html">proyectos</a></h1>
 
