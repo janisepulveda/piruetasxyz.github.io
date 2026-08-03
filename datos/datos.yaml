@@ -509,6 +509,12 @@ talleres-momentos:
       content:
         es: 'próximamente más información sobre este proyecto.'
         en: 'more information about this project coming soon.'
+    - title:
+        es: 'cliente'
+        en: 'client'
+      content:
+        es: '<a href="/clientes/universidad-diego-portales/index.html">Universidad Diego Portales</a>'
+        en: '<a href="/clientes/universidad-diego-portales/index.html">Universidad Diego Portales</a>'
 
 tienda:
   en: 'store'
@@ -588,3 +594,9 @@ universidad-diego-portales:
           magna aliqua. Ut enim ad minim veniam, quis nostrud
           exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat.
+    - title:
+        es: 'proyectos'
+        en: 'projects'
+      content:
+        es: '<a href="/proyectos/talleres-momentos/index.html">talleres momentos</a>'
+        en: '<a href="/proyectos/talleres-momentos/index.html">talleres momentos</a>'
