@@ -83,6 +83,10 @@ body {
   gap: 18px;
 }
 
+.contenedor-producto .imagen-lateral {
+  display: block;
+}
+
 .contenedor-producto .proyecto-item img {
   display: block;
   width: 100%;

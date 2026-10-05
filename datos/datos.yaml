@@ -378,7 +378,7 @@ proyectos:
         en: 'teaching activities and workshops'
 
 parla:
-  imagen_social: '/media/social/parla.jpg'
+  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2025-piruetas-parla/jpg/preview-redes-sociales.jpg'
   es: 'parla'
   en: 'parla'
   meta:
@@ -470,7 +470,7 @@ parla:
           font: @uno_ca
 
 chufebu:
-  imagen_social: '/media/social/chufebu.jpg'
+  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/jpg/preview-redes-sociales.jpg'
   es: 'chufebu'
   en: 'chufebu'
   meta:
@@ -480,11 +480,15 @@ chufebu:
     es: 'popusintes'
     en: 'popusintes'
 
-  hero:
-    image: '/media/proyectos/chufebu-placa.svg'
-    alt:
-      es: 'placa de chufebu v0.1 rev-a'
-      en: 'chufebu v0.1 rev-a board'
+  imagenes_laterales:
+    - image: '/media/proyectos/chufebu-placa.svg'
+      alt:
+        es: 'placa de chufebu v0.1 rev-a'
+        en: 'chufebu v0.1 rev-a board'
+    - image: '/media/proyectos/chufebu-esquematico.svg'
+      alt:
+        es: 'esquemático de chufebu v0.1 rev-a'
+        en: 'chufebu v0.1 rev-a schematic'
 
   sections:
     - id: descripcion

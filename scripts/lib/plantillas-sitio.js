@@ -57,9 +57,10 @@ function extraerMetaDeDetalle(data) {
   // prioridad: imagen_social explicita > hero > primera de la galeria.
   // Los SVG se descartan porque WhatsApp/Facebook/X/LinkedIn no los
   // muestran como preview; para esos casos se usa imagen_social.
+  const lateral = imagenesLaterales(data)[0];
   const candidatas = [
     data.imagen_social,
-    data.hero && data.hero.image,
+    lateral && lateral.image,
     Array.isArray(data.galeria) && data.galeria[0] && data.galeria[0].image,
   ];
   const imagen = candidatas.find((c) => c && !/\.svg$/i.test(c)) || '';
@@ -126,6 +127,39 @@ function renderizarGaleria(galeria) {
     })
     .join('');
   return `<div class="galeria-filas">${filas}</div>`;
+}
+
+/* Lista de imágenes de la columna lateral de una página de detalle
+   (el `.proyecto-item` junto a `.contenido-texto`): `imagenes_laterales`
+   si existe (ej. placa + esquemático de un popusinte), o si no el
+   `hero` suelto como única imagen. Vacía si no hay ninguna. */
+function imagenesLaterales(data) {
+  if (Array.isArray(data.imagenes_laterales)) return data.imagenes_laterales.filter((i) => i && i.image);
+  if (data.hero && data.hero.image) return [data.hero];
+  return [];
+}
+
+/* Arma el `.proyecto-item` de la columna lateral, con cada imagen
+   enlazada a su archivo para verla en tamaño completo (útil para
+   esquemáticos y placas). Igual que la galería, el alt horneado va en
+   inglés y refreshGaleriaAlt (js/script.js) lo cambia con el idioma.
+   Devuelve '' si la página no tiene imágenes laterales en el YAML. */
+function renderizarImagenesLaterales(data) {
+  const imagenes = imagenesLaterales(data);
+  if (!imagenes.length) return '';
+  const items = imagenes
+    .map((item) => {
+      const src = escaparHtml(item.image);
+      const altEsRaw = (item.alt && item.alt.es) || '';
+      const altEnRaw = (item.alt && item.alt.en) || '';
+      const altInicial = escaparHtml(altEnRaw || altEsRaw);
+      return (
+        `<a class="imagen-lateral" href="${src}" target="_blank" rel="noopener">` +
+        `<img src="${src}" data-alt-es="${escaparHtml(altEsRaw)}" data-alt-en="${escaparHtml(altEnRaw)}" alt="${altInicial}"></a>`
+      );
+    })
+    .join('');
+  return `<div class="proyecto-item">${items}</div>`;
 }
 
 function renderizarFichaTecnica(data) {
@@ -387,6 +421,7 @@ function renderizarClientesLista(clientes) {
 module.exports = {
   escaparHtml,
   renderizarDetalle,
+  renderizarImagenesLaterales,
   renderizarTituloH1,
   renderizarClientesLista,
   renderizarPersonaCard,
