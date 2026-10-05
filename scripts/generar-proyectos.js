@@ -47,6 +47,7 @@ const PAGINAS = [
   { clave: 'inicio', archivo: 'index.html' },
   { clave: 'tienda', archivo: 'store/index.html' },
   { clave: 'chufebu', archivo: 'proyectos/chufebu/index.html' },
+  { clave: 'chufe', archivo: 'proyectos/chufe/index.html' },
   { clave: 'parla', archivo: 'proyectos/parla/index.html' },
   { clave: 'investigacion-gerassic-organ', archivo: 'proyectos/investigacion-gerassic-organ/index.html' },
   { clave: 'maquinitas-tidal', archivo: 'proyectos/maquinitas-tidal/index.html' },
