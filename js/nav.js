@@ -35,8 +35,7 @@ const navbarContent = `
         <div class="nav-contenido">
             <h5>popusintes</h5>
             <ol>
-                <li><a href="/proyectos/parla/index.html">parla</a> (2025)</li>
-                <li><a href="/proyectos/osca/index.html">osca</a> (soon)</li>
+                <li><a href="/chufebu/">chufebu</a> (2026)</li>
             </ol>
 
             <h5>software</h5>
