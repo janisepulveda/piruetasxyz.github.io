@@ -54,7 +54,15 @@ function extraerMetaDeDetalle(data) {
     ? truncar(textoPlano(seccionConContenido.content.en || seccionConContenido.content.es), 160)
     : '';
 
-  const imagen = (Array.isArray(data.galeria) && data.galeria[0] && data.galeria[0].image) || '';
+  // prioridad: imagen_social explicita > hero > primera de la galeria.
+  // Los SVG se descartan porque WhatsApp/Facebook/X/LinkedIn no los
+  // muestran como preview; para esos casos se usa imagen_social.
+  const candidatas = [
+    data.imagen_social,
+    data.hero && data.hero.image,
+    Array.isArray(data.galeria) && data.galeria[0] && data.galeria[0].image,
+  ];
+  const imagen = candidatas.find((c) => c && !/\.svg$/i.test(c)) || '';
 
   return { titulo, descripcion, imagen };
 }
@@ -68,6 +76,9 @@ function renderizarMetaHead({ titulo, descripcion, imagen, ruta }) {
   const tituloFinal = titulo ? `piruetas - ${titulo}` : 'piruetas';
   const descripcionFinal = descripcion || DESCRIPCION_DEFECTO;
   const imagenFinal = absolutizarUrl(imagen || IMAGEN_DEFECTO);
+  // el logo es cuadrado: con summary_large_image X lo recorta, asi que
+  // sin foto propia se usa la tarjeta chica
+  const tarjetaTwitter = imagen ? 'summary_large_image' : 'summary';
   const urlFinal = absolutizarUrl(ruta);
 
   const t = escaparHtml(tituloFinal);
@@ -83,7 +94,7 @@ function renderizarMetaHead({ titulo, descripcion, imagen, ruta }) {
     <meta property="og:description" content="${d}" />
     <meta property="og:image" content="${i}" />
     <meta property="og:url" content="${u}" />
-    <meta name="twitter:card" content="summary_large_image" />`;
+    <meta name="twitter:card" content="${tarjetaTwitter}" />`;
 }
 
 function spanEsEn(es, en, clasesExtra) {

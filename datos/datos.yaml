@@ -378,6 +378,7 @@ proyectos:
         en: 'teaching activities and workshops'
 
 parla:
+  imagen_social: '/media/social/parla.jpg'
   es: 'parla'
   en: 'parla'
   meta:
@@ -469,6 +470,7 @@ parla:
           font: @uno_ca
 
 chufebu:
+  imagen_social: '/media/social/chufebu.jpg'
   es: 'chufebu'
   en: 'chufebu'
   meta:

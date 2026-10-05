@@ -35,6 +35,33 @@ node scripts/generar-clientes.js
 node scripts/generar-personas.js
 ```
 
+## Preview en redes sociales
+
+Cada página trae sus meta tags Open Graph / Twitter Card horneados
+(ver `renderizarMetaHead` en `scripts/lib/plantillas-sitio.js`). La
+imagen del preview se elige así:
+
+1. `imagen_social` de la entrada en el YAML, si existe.
+2. si no, `hero.image`.
+3. si no, la primera imagen de `galeria`.
+4. si no hay ninguna, el logo (`/media/piruetas-v0.jpg`), con tarjeta
+   chica (`summary`) porque es cuadrado.
+
+Los SVG se saltan porque WhatsApp, Facebook, X y LinkedIn no los
+muestran. Para esos casos, o cuando la foto es muy pesada o vertical,
+conviene hacer una versión de 1200×628 px en JPG, de menos de ~400 KB,
+guardarla en `media/social/<proyecto>.jpg` y apuntar `imagen_social`
+a ella. En macOS, por ejemplo:
+
+```sh
+sips -z 628 1200 foto-recortada.jpg --out media/social/proyecto.jpg
+rsvg-convert -b white -w 1200 placa.svg -o placa.png  # desde un SVG
+```
+
+Para probar cómo se ve un link: https://www.opengraph.xyz/ o el
+[depurador de Facebook](https://developers.facebook.com/tools/debug/),
+que además sirve para refrescar el caché cuando se cambia la imagen.
+
 ## Licencia
 
 MIT

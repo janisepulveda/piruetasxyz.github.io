@@ -57,7 +57,7 @@ const PAGINAS = [
   { clave: 'talleres-momentos', archivo: 'proyectos/talleres-momentos/index.html' },
 ];
 
-function hornearIndiceProyectos(proyectos) {
+function hornearIndiceProyectos(proyectos, imagenSocial) {
   let html = fs.readFileSync(INDICE_PROYECTOS_HTML, 'utf8');
   html = reemplazarBloque(html, '<div id="proyectos" class="proyectos-grid">', renderizarProyectosGrid(proyectos));
 
@@ -68,7 +68,7 @@ function hornearIndiceProyectos(proyectos) {
     html = reemplazarAtributo(html, 'hero-link', 'href', escaparHtml(hero.href));
   }
 
-  html = reemplazarMetaHead(html, renderizarMetaHead({ titulo: 'projects', imagen: hero && hero.src, ruta: '/proyectos/' }));
+  html = reemplazarMetaHead(html, renderizarMetaHead({ titulo: 'projects', imagen: imagenSocial, ruta: '/proyectos/' }));
 
   html = quitarScriptsRuntime(html);
   html = hornearIdiomaPorDefecto(html);
@@ -82,7 +82,12 @@ function hornearIndiceProyectos(proyectos) {
 function main() {
   const datos = jsyaml.load(fs.readFileSync(DATOS_YAML, 'utf8'));
 
-  hornearIndiceProyectos((datos.proyectos && datos.proyectos.proyectos) || []);
+  // el preview del indice usa la imagen social del primer proyecto
+  // (en el orden de PAGINAS) cuya pagina tenga foto propia, no el
+  // hero rotativo, que puede ser una foto pesada o vertical
+  const imagenSocialIndice = PAGINAS.map(({ clave }) => datos[clave] && extraerMetaDeDetalle(datos[clave]).imagen)
+    .find(Boolean);
+  hornearIndiceProyectos((datos.proyectos && datos.proyectos.proyectos) || [], imagenSocialIndice);
 
   let horneadas = 0;
   let omitidas = 0;
