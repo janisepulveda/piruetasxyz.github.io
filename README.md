@@ -61,6 +61,20 @@ chufebu:
         en: 'chufebu v0.1 rev-a schematic'
 ```
 
+Un video (por ejemplo, un render 3D de una placa) va en la misma
+lista con `video:` en vez de `image:`. Se muestra en su propia fila
+igual que una imagen, en loop, sin sonido y sin enlace a su archivo,
+y el `alt` va como `aria-label`. Los videos viven en la carpeta
+`mp4/` de piruetas-web-media y nunca se usan para el preview en redes
+sociales:
+
+```yaml
+    - video: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/mp4/chufebu-placa-3d-giro.mp4'
+      alt:
+        es: 'render 3D de la placa de chufebu v0.1 rev-a, girando'
+        en: '3D render of the chufebu v0.1 rev-a board, turning'
+```
+
 ## Preview en redes sociales
 
 Cada página trae sus meta tags Open Graph / Twitter Card horneados

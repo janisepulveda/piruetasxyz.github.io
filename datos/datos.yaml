@@ -505,6 +505,10 @@ chufebu:
       alt:
         es: 'placa de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a board'
+    - video: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/mp4/chufebu-placa-3d-giro.mp4'
+      alt:
+        es: 'render 3D de la placa de chufebu v0.1 rev-a, girando'
+        en: '3D render of the chufebu v0.1 rev-a board, turning'
 
   sections:
     - id: descripcion
@@ -596,6 +600,10 @@ chufe:
       alt:
         es: 'placa de chufe v0.1 rev-a'
         en: 'chufe v0.1 rev-a board'
+    - video: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufe/mp4/chufe-placa-3d-giro.mp4'
+      alt:
+        es: 'render 3D de la placa de chufe v0.1 rev-a, girando'
+        en: '3D render of the chufe v0.1 rev-a board, turning'
 
   sections:
     - id: descripcion

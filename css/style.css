@@ -202,7 +202,8 @@ body {
   display: block;
 }
 
-.galeria-item img {
+.galeria-item img,
+.galeria-item video {
   display: block;
   width: 100%;
   height: clamp(320px, 48vw, 680px);

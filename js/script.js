@@ -33,6 +33,9 @@ window.refreshGaleriaAlt = function () {
     document.querySelectorAll('.galeria-item img').forEach((img) => {
         img.alt = img.dataset[key] || '';
     });
+    document.querySelectorAll('.galeria-item video').forEach((video) => {
+        video.setAttribute('aria-label', video.dataset[key] || '');
+    });
 };
 
 function applyLang(lang) {

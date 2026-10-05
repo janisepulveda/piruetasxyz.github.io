@@ -130,6 +130,18 @@ function renderizarGaleria(galeria) {
       // toggle de idioma lo actualiza en el navegador via
       // refreshGaleriaAlt, igual que hoy
       const altInicial = escaparHtml(altEnRaw || altEsRaw);
+      // un video (ej. render 3D de una placa) va en loop y sin sonido,
+      // como si fuera una imagen animada; no se enlaza a su archivo.
+      // Su texto alternativo va en aria-label (refreshGaleriaAlt lo
+      // cambia con el idioma igual que el alt de las imagenes)
+      if (item.video) {
+        const videoSrc = escaparHtml(item.video);
+        return (
+          `<div class="galeria-fila"><div class="galeria-item">` +
+          `<video src="${videoSrc}" autoplay loop muted playsinline preload="metadata" ` +
+          `data-alt-es="${altEs}" data-alt-en="${altEn}" aria-label="${altInicial}"></video></div></div>`
+        );
+      }
       return (
         `<div class="galeria-fila"><a class="galeria-item" href="${src}" target="_blank" rel="noopener">` +
         `<img src="${src}" loading="lazy" data-alt-es="${altEs}" data-alt-en="${altEn}" alt="${altInicial}"></a></div>`
@@ -139,9 +151,9 @@ function renderizarGaleria(galeria) {
   return `<div class="galeria-filas">${filas}</div>`;
 }
 
-/* Todas las imágenes de una página de detalle, en orden: `imagenes`
-   (ej. placa + esquemático de un popusinte), o si no el `hero`
-   suelto, y después la `galeria`. Se muestran después del texto,
+/* Todas las imágenes (y videos, con `video:` en vez de `image:`) de
+   una página de detalle, en orden: `imagenes` (ej. placa + esquemático
+   de un popusinte), o si no el `hero` suelto, y después la `galeria`. Se muestran después del texto,
    cada una en su propia fila de ancho completo (nunca al lado del
    texto). Vacía si no hay ninguna. */
 function imagenesDePagina(data) {
@@ -151,7 +163,7 @@ function imagenesDePagina(data) {
       ? [data.hero]
       : [];
   const galeria = Array.isArray(data.galeria) ? data.galeria : [];
-  return [...principales, ...galeria].filter((i) => i && i.image);
+  return [...principales, ...galeria].filter((i) => i && (i.image || i.video));
 }
 
 function renderizarFichaTecnica(data) {
