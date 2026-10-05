@@ -470,7 +470,7 @@ parla:
           font: @uno_ca
 
 chufebu:
-  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/jpg/preview-redes-sociales.jpg'
+  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/jpg/chufebu-esquematico.jpg'
   es: 'chufebu'
   en: 'chufebu'
   meta:
