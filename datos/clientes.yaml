@@ -121,6 +121,15 @@ biblioteca-cuir:
   titulo:
     es: 'bibliotecaCuir'
     en: 'bibliotecaCuir'
+  galeria:
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-biblioteca-cuir-web/webp/portada-foto-actividad.webp'
+      alt:
+        es: 'sitio web de bibliotecaCuir, portada con foto de una actividad'
+        en: 'bibliotecaCuir website, cover with a photo of an event'
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-biblioteca-cuir-web/webp/inicio-objetos-coleccion.webp'
+      alt:
+        es: 'sitio web de bibliotecaCuir, inicio con objetos de la colección'
+        en: 'bibliotecaCuir website, home page with objects from the collection'
   sections:
     - titulo:
         es: 'lorem ipsum'
