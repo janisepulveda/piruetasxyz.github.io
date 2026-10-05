@@ -19,91 +19,55 @@ body {
   overflow-x: hidden;
 }
 
-#topbar-buttons {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 10pt;
-}
-
-.topbar-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-#menu-btn,
-#lang-btn {
+#lang-btn,
+.nav-toggle {
   cursor: pointer;
+  font-family: inherit;
 }
 
-#topbar-buttons [data-state],
-#topbar-buttons [data-lang] {
+/* el selector de idioma es texto simple, sin caja */
+#divLeftMenu #lang-btn {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+#lang-btn [data-lang] {
   opacity: 0.4;
 }
 
-#topbar-buttons .toggle-active {
+#lang-btn .toggle-active {
   opacity: 1;
-  text-decoration: underline;
 }
 
+.nav-toggle {
+  display: none;
+}
+
+/* menú lateral fijo, siempre visible en pantallas anchas */
 .left {
   background-color: pink;
   position: fixed;
   top: 0;
-  left: -220px;
-  width: 220px;
+  left: 0;
+  width: 260px;
   height: 100vh;
-  padding: 80px 20px 20px 20px;
+  padding: 40px 24px;
   z-index: 2000;
   border: none;
-  box-shadow: 10px 0px 0px pink;
+  border-right: 1px solid black;
   overflow-y: auto;
-}
-
-.left.active {
-  left: 0;
 }
 
 .right {
   background-color: greenyellow;
   min-height: 100vh;
+  margin-left: 260px;
+  width: calc(100% - 260px);
   padding: 80px 40px 120px 40px;
-}
-
-body.menu-ready .left {
-  transition: left 0.3s ease-in-out;
-}
-
-body.menu-ready .right {
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
-}
-
-.left.active~.right {
-  transform: translateX(220px);
-  width: calc(100% - 220px);
-}
-
-/* above the mobile breakpoint, the menu stays open permanently
-   and the show/hide toggle is hidden since it no longer applies */
-@media (min-width: 801px) {
-  .left {
-    left: 0 !important;
-  }
-
-  .right {
-    margin-left: 220px;
-    width: calc(100% - 220px);
-    transform: none !important;
-  }
-
-  #menu-toggle-row {
-    display: none;
-  }
 }
 
 .contenedor-producto {
@@ -557,21 +521,34 @@ html[lang="es"] .en {
   }
 
   .right {
-    padding: 80px 20px 120px 20px;
-  }
-
-  .left.active~.right {
-    transform: translateX(0);
+    margin-left: 0;
     width: 100%;
+    padding: 40px 20px 120px 20px;
   }
 
+  /* en pantallas angostas el menú queda arriba de la página */
   .left {
-    width: 80%;
-    left: -85%;
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-shadow: none;
+    overflow-y: visible;
   }
 
-  .left.active {
-    left: 0;
+  .nav-idioma {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  /* menú cerrado: solo se ven la marca, el idioma y el botón */
+  #divLeftMenu:not(.abierto) .nav-section:nth-child(n + 3) {
+    display: none;
   }
 
   .persona-card {
@@ -589,29 +566,63 @@ html[lang="es"] .en {
   font-size: 12pt;
 }
 
+#divLeftMenu h3.nav-brand {
+  font-size: 13pt;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid black;
+}
+
+.nav-idioma {
+  margin-bottom: 10px;
+}
+
+.nav-idioma > div {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+/* títulos de sección en gris, como en montoyamoraga */
+#divLeftMenu h3.nav-titulo,
+#divLeftMenu h3.nav-titulo a {
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+.nav-contenido {
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+#divLeftMenu .nav-contenido h5 {
+  margin: 10px 0 5px 0;
+  font-size: 9pt;
+  text-transform: lowercase;
+  color: rgba(0, 0, 0, 0.55);
+}
+
 #divLeftMenu ol {
-  padding-left: 20px;
+  padding-left: 18px;
+  margin: 0;
   font-size: 10pt;
 }
 
 #divLeftMenu a {
-  color: blue;
-  text-decoration: underline;
-}
-
-#divLeftMenu a.nav-active {
-  display: inline-block;
-  border: 1px solid black;
-  box-shadow: 3px 5px 0px black;
-  padding: 2px 8px;
-  background-color: white;
   color: black;
   text-decoration: none;
 }
 
-#divLeftMenu ol a.nav-active {
-  padding: 1px 6px;
-  box-shadow: 2px 3px 0px black;
+#divLeftMenu a:hover {
+  color: blue;
+}
+
+/* página actual (y su sección) en azul, sin caja */
+#divLeftMenu a.nav-active,
+#divLeftMenu h3.nav-titulo a.nav-active {
+  color: blue;
+  font-weight: bold;
 }
 
 /* Clientes list styling */
