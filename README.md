@@ -73,26 +73,28 @@ imagen del preview se elige así:
 4. si no hay ninguna, el logo (`2022-piruetas-logo/jpg/piruetas-v0.jpg` en piruetas-web-media), con tarjeta
    chica (`summary`) porque es cuadrado.
 
-Los SVG se saltan porque WhatsApp, Facebook, X y LinkedIn no los
-muestran. Para esos casos, o cuando la foto es muy pesada o vertical,
-conviene hacer una versión de 1200×628 px en JPG, de menos de ~400 KB.
-Como todas las imágenes, va en el repositorio
-[piruetas-web-media](https://github.com/piruetasxyz/piruetas-web-media),
-no en este: `AAAA-cliente-proyecto/jpg/preview-redes-sociales.jpg`, y
-`imagen_social` apunta a ella vía jsDelivr, por ejemplo:
+Nunca se hace una imagen de preview a mano. Si la imagen elegida
+vive en [piruetas-web-media](https://github.com/piruetasxyz/piruetas-web-media)
+(`AAAA-cliente-proyecto/jpg|png|svg/<nombre>`), `og:image` apunta a su
+versión `AAAA-cliente-proyecto/redes/<nombre>.jpg`: un JPG de
+1200×628 px que genera un GitHub Action de ese repositorio
+(`scripts/generar-redes-sociales.sh`) para cada imagen que se sube.
+Las fotos se recortan al centro y los SVG (esquemáticos, placas) se
+centran completos sobre fondo blanco, porque WhatsApp, Facebook, X y
+LinkedIn no muestran SVG. Se usa `.jpg` y no `.webp` porque algunas
+apps (LinkedIn, iMessage antiguo) no muestran webp en el preview.
+
+Para que el preview muestre otra imagen que no sea la primera de la
+página, `imagen_social` apunta a la imagen original (no a la de
+`redes/`), por ejemplo:
 
 ```yaml
-imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/jpg/preview-redes-sociales.jpg'
+imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2025-piruetas-parla/jpg/parla-placa.jpg'
 ```
 
-Se usa el `.jpg` y no el `.webp` porque algunas apps (LinkedIn,
-iMessage antiguo) no muestran webp en el preview. Para hacerla en
-macOS, por ejemplo:
-
-```sh
-sips -z 628 1200 foto-recortada.jpg --out preview-redes-sociales.jpg
-rsvg-convert -b white -w 1200 placa.svg -o placa.png  # desde un SVG
-```
+Al agregar una imagen nueva, primero se sube a piruetas-web-media y
+se espera a que su Action commitee la versión `redes/`; recién
+después se sube el cambio de `datos.yaml` acá.
 
 Para probar cómo se ve un link: https://www.opengraph.xyz/ o el
 [depurador de Facebook](https://developers.facebook.com/tools/debug/),

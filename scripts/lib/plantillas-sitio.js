@@ -40,6 +40,18 @@ function absolutizarUrl(ruta) {
   return /^https?:\/\//.test(ruta) ? ruta : `${DOMINIO}${ruta}`;
 }
 
+/* Traduce una imagen de piruetas-web-media (.../<proyecto>/jpg|png|svg/
+   <nombre>.<ext>) a su preview de redes sociales
+   (.../<proyecto>/redes/<nombre>.jpg), que genera el script
+   scripts/generar-redes-sociales.sh de ese repositorio. Devuelve null
+   si la url no es de piruetas-web-media. */
+const PATRON_MEDIA = /^(https:\/\/cdn\.jsdelivr\.net\/gh\/piruetasxyz\/piruetas-web-media@main\/[^/]+)\/(?:jpg|png|svg)\/([^/]+)\.(?:jpe?g|png|svg)$/i;
+
+function imagenRedesSociales(url) {
+  const m = PATRON_MEDIA.exec(url);
+  return m ? `${m[1]}/redes/${m[2]}.jpg` : null;
+}
+
 /* Extrae titulo/descripcion/imagen de un `data` con la misma forma
    que usa renderizarDetalle (titulo/es-en sueltos + sections +
    galeria opcional), para armar los meta tags de la pagina. */
@@ -55,10 +67,13 @@ function extraerMetaDeDetalle(data) {
     : '';
 
   // prioridad: imagen_social explicita > imagenes/hero > galeria.
-  // Los SVG se descartan porque WhatsApp/Facebook/X/LinkedIn no los
-  // muestran como preview; para esos casos se usa imagen_social.
-  const candidatas = [data.imagen_social, ...imagenesDePagina(data).map((i) => i.image)];
-  const imagen = candidatas.find((c) => c && !/\.svg$/i.test(c)) || '';
+  // Si la imagen vive en piruetas-web-media se usa su version redes/
+  // (1200x628, generada por un GitHub Action alla). Si no, los SVG se
+  // descartan porque WhatsApp/Facebook/X/LinkedIn no los muestran.
+  const candidatas = [data.imagen_social, ...imagenesDePagina(data).map((i) => i.image)]
+    .filter(Boolean)
+    .map((c) => imagenRedesSociales(c) || c);
+  const imagen = candidatas.find((c) => !/\.svg$/i.test(c)) || '';
 
   return { titulo, descripcion, imagen };
 }

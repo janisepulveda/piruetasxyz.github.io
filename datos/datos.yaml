@@ -378,7 +378,6 @@ proyectos:
         en: 'teaching activities and workshops'
 
 parla:
-  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2025-piruetas-parla/jpg/preview-redes-sociales.jpg'
   es: 'parla'
   en: 'parla'
   meta:
@@ -470,7 +469,6 @@ parla:
           font: @uno_ca
 
 chufebu:
-  imagen_social: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/jpg/chufebu-esquematico.jpg'
   es: 'chufebu'
   en: 'chufebu'
   meta:
