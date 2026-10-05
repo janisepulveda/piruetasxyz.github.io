@@ -35,30 +35,31 @@ node scripts/generar-clientes.js
 node scripts/generar-personas.js
 ```
 
-## Imágenes laterales (placas, esquemáticos)
+## Imágenes
 
-Las páginas de proyectos pueden traer una columna de imágenes al lado
-del texto. Se definen en `datos/datos.yaml` con `imagenes_laterales`,
-y `generar-proyectos.js` las hornea en orden, cada una enlazada a su
+Este repositorio no guarda imágenes: todas viven en
+[piruetas-web-media](https://github.com/piruetasxyz/piruetas-web-media),
+en carpetas `AAAA-cliente-proyecto/`, y el YAML las enlaza vía
+jsDelivr (`https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/...`).
+
+Las páginas de proyectos y clientes muestran primero el texto y
+después cada imagen en su propia fila de ancho completo, nunca texto e
+imagen lado a lado. El orden es: `imagenes` (o `hero`, si no hay
+`imagenes`) y después `galeria`. Cada imagen queda enlazada a su
 archivo para verla en tamaño completo:
 
 ```yaml
 chufebu:
-  imagenes_laterales:
-    - image: '/media/proyectos/chufebu-placa.svg'
+  imagenes:
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
       alt:
         es: 'placa de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a board'
-    - image: '/media/proyectos/chufebu-esquematico.svg'
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-esquematico.svg'
       alt:
         es: 'esquemático de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a schematic'
 ```
-
-Si no hay `imagenes_laterales`, se usa `hero` como única imagen. Si
-no hay ninguna de las dos, la imagen lateral puesta a mano en el HTML
-queda como está. El HTML de la página tiene que traer un
-`<div class="proyecto-item">` para que el generador lo reemplace.
 
 ## Preview en redes sociales
 
@@ -67,9 +68,9 @@ Cada página trae sus meta tags Open Graph / Twitter Card horneados
 imagen del preview se elige así:
 
 1. `imagen_social` de la entrada en el YAML, si existe.
-2. si no, la primera de `imagenes_laterales` (o `hero.image`).
+2. si no, la primera de `imagenes` (o `hero.image`).
 3. si no, la primera imagen de `galeria`.
-4. si no hay ninguna, el logo (`/media/piruetas-v0.jpg`), con tarjeta
+4. si no hay ninguna, el logo (`2022-piruetas-logo/jpg/piruetas-v0.jpg` en piruetas-web-media), con tarjeta
    chica (`summary`) porque es cuadrado.
 
 Los SVG se saltan porque WhatsApp, Facebook, X y LinkedIn no los

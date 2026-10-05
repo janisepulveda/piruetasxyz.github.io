@@ -71,32 +71,24 @@ body {
 }
 
 .contenedor-producto {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
   margin-bottom: 80px;
 }
 
-.contenedor-producto .proyecto-item {
-  flex: 0 0 45%;
-  max-width: 600px;
-  gap: 18px;
+/* páginas de proyectos y clientes: primero el texto y después cada
+   imagen en su propia fila de ancho completo (.galeria-filas), nunca
+   texto e imagen lado a lado. el texto se limita a un ancho cómodo
+   de lectura, las filas de imágenes no. */
+.contenido-texto > :not(.galeria-filas) {
+  max-width: 920px;
 }
 
-.contenedor-producto .imagen-lateral {
-  display: block;
-}
-
-.contenedor-producto .proyecto-item img {
+/* hero del índice de proyectos: una imagen de ancho completo */
+.proyectos-hero img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
-}
-
-.contenido-texto {
-  flex: 1;
+  height: clamp(320px, 48vw, 680px);
+  object-fit: cover;
+  border: 1px solid black;
 }
 
 .contenido-texto .cajita:first-child {
@@ -497,18 +489,8 @@ html[lang="es"] .en {
 }
 
 @media (max-width: 900px) {
-  .contenedor-producto {
-    flex-direction: column;
-    gap: 20px;
-  }
-
   .personas-list {
     grid-template-columns: 1fr;
-  }
-
-  .contenedor-producto .proyecto-item {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
 
   .persona-card {
