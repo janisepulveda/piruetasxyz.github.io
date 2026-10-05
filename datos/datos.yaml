@@ -31,7 +31,7 @@ personas:
             es: 'Investigador principal'
             en: 'Principal Investigator'
           foto: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-personas/jpg/aaron-montoya.jpg'
-          modelo3d: '../assets/3d/montoyamoraga-2026-08.glb'
+          modelo3d: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-personas/glb/montoyamoraga-2026-08.glb'
           descripcion:
             es: |-
               Aarón Montoya Moraga es ingeniere civil electricista de
@@ -116,7 +116,7 @@ personas:
           # reemplazo de render.js, Etapa 4): sin esto, una vista sin
           # JS del visor 3D no tiene nada que mostrar
           foto: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg'
-          modelo3d: '../assets/3d/mateo-arce-2026-09.glb'
+          modelo3d: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-personas/glb/mateo-arce-2026-09.glb'
           rol:
             es: 'programador, diseñador gráfico'
             en: 'programmer, graphic designer'
@@ -481,14 +481,14 @@ chufebu:
     en: 'popusintes'
 
   imagenes:
-    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
-      alt:
-        es: 'placa de chufebu v0.1 rev-a'
-        en: 'chufebu v0.1 rev-a board'
     - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-esquematico.svg'
       alt:
         es: 'esquemático de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a schematic'
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
+      alt:
+        es: 'placa de chufebu v0.1 rev-a'
+        en: 'chufebu v0.1 rev-a board'
 
   sections:
     - id: descripcion
