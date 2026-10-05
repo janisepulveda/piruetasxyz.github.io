@@ -472,18 +472,18 @@ parla:
         es: 'créditos'
       content:
         es: |-
-          empresa: @piruetas.xyz
-          concepto: @montoyamoraga
-          pcb: @misaa.cc
-          gráfica y fotografía: @rafita.studio
-          logística: @jnsplv
+          empresa: @piruetas.xyz<br>
+          concepto: @montoyamoraga<br>
+          pcb: @misaa.cc<br>
+          gráfica y fotografía: @rafita.studio<br>
+          logística: @jnsplv<br>
           tipografía: @uno_ca
         en: |-
-          company: @piruetas.xyz
-          concept: @montoyamoraga
-          pcb: @misaa.cc
-          graphic design and photography: @rafita.studio
-          logistics: @jnsplv
+          company: @piruetas.xyz<br>
+          concept: @montoyamoraga<br>
+          pcb: @misaa.cc<br>
+          graphic design and photography: @rafita.studio<br>
+          logistics: @jnsplv<br>
           font: @uno_ca
 
 chufebu:
@@ -572,6 +572,18 @@ chufebu:
         en: |-
           user manual, schematic, board and bill of materials (in Spanish): <a href="https://piruetas.xyz/chufebu/">piruetas.xyz/chufebu</a><br>
           KiCad source and fabrication files: <a href="https://github.com/piruetasxyz/chufebu">github.com/piruetasxyz/chufebu</a>
+
+    - id: creditos
+      titulo:
+        es: 'créditos'
+        en: 'credits'
+      content:
+        es: |-
+          aarón montoya-moraga: investigación, esquemático, pcb, fabricación y documentación.<br>
+          matías serrano: revisor experto de esquemáticos y pcbs.
+        en: |-
+          aarón montoya-moraga: research, schematic, PCB, manufacturing and documentation.<br>
+          matías serrano: expert schematic and PCB reviewer.
 
     - id: licencia
       titulo:
@@ -675,6 +687,18 @@ chufe:
         en: |-
           user manual, schematic, board and bill of materials (in Spanish): <a href="https://piruetas.xyz/chufe/">piruetas.xyz/chufe</a><br>
           KiCad source and fabrication files: <a href="https://github.com/piruetasxyz/chufe">github.com/piruetasxyz/chufe</a>
+
+    - id: creditos
+      titulo:
+        es: 'créditos'
+        en: 'credits'
+      content:
+        es: |-
+          aarón montoya-moraga: investigación, esquemático, pcb, fabricación y documentación.<br>
+          matías serrano: revisor experto de esquemáticos y pcbs.
+        en: |-
+          aarón montoya-moraga: research, schematic, PCB, manufacturing and documentation.<br>
+          matías serrano: expert schematic and PCB reviewer.
 
     - id: licencia
       titulo:
