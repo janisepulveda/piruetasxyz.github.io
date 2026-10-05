@@ -1,23 +1,4 @@
 document.body.insertAdjacentHTML(
-  'afterbegin',
-  `
-    <div id="topbar-buttons">
-        <div class="topbar-row" id="menu-toggle-row">
-            <span class="es">menú:</span><span class="en">menu:</span>
-            <button id="menu-btn" class="boton-piruetas">
-                <span class="es"><span data-state="show">mostrar</span> / <span data-state="hide">esconder</span></span>
-                <span class="en"><span data-state="show">show</span> / <span data-state="hide">hide</span></span>
-            </button>
-        </div>
-        <div class="topbar-row">
-            <span class="es">leng:</span><span class="en">lang:</span>
-            <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
-        </div>
-    </div>
-`,
-);
-
-document.body.insertAdjacentHTML(
   'beforeend',
   `
     <footer class="colophon-banner">
@@ -38,96 +19,85 @@ document.body.insertAdjacentHTML(
 );
 
 const navbarContent = `
-    <h1><a id="nav-inicio" href="/index.html"><span class="es">inicio</span><span class="en">home</span></a></h1>
-    <h1><a id="nav-proyectos" href="/proyectos/index.html"><span class="es">proyectos</span><span class="en">projects</span></a></h1>
+    <div class="nav-section">
+        <h3 class="nav-brand"><a href="/index.html">piruetas</a></h3>
+    </div>
 
-    <h1>
-        <a id="nav-tienda" href="https://piruetas.xyz/tienda">
-            <span class="es">tienda</span><span class="en">shop</span>
-        </a>
-    </h1>
+    <div class="nav-section nav-idioma">
+        <div>
+            <button id="lang-btn" class="boton-piruetas"><span data-lang="en">en</span> / <span data-lang="es">es</span></button>
+        </div>
+        <button class="boton-piruetas nav-toggle" aria-expanded="false" aria-controls="divLeftMenu"><span class="es">menú</span><span class="en">menu</span></button>
+    </div>
 
-    <h1><a id="nav-personas" href="/personas/index.html"><span class="es">personas</span><span class="en">people</span></a></h1>
-    <h1><a id="nav-clientes" href="/clientes/index.html"><span class="es">clientes</span><span class="en">clients</span></a></h1>
+    <div class="nav-section">
+        <h3 class="nav-titulo"><a href="/proyectos/index.html"><span class="es">proyectos</span><span class="en">projects</span></a></h3>
+        <div class="nav-contenido">
+            <h5>popusintes</h5>
+            <ol>
+                <li><a href="/proyectos/chufebu/index.html">chufebu</a> (2026)</li>
+            </ol>
 
-    <hr style="border: 0; border-top: 1px solid black; margin: 20px 0;">
+            <h5>software</h5>
+            <ol>
+                <li><a href="/proyectos/redondela/index.html">redondela</a></li>
+            </ol>
 
-    <h3>popusintes</h3>
-    <ol>
-        <li><a id="nav-parla" href="/proyectos/parla/index.html">parla</a> (2025)</li>
-        <li><a id="nav-osca" href="/proyectos/osca/index.html">osca</a> (soon)</li>
-    </ol>
+            <h5>hardware</h5>
+            <ol>
+                <li><a href="/proyectos/gerassic-organ/index.html">gerassic organ</a></li>
+            </ol>
 
-    <h3>software</h3>
-    <ol>
-        <li><a id="nav-redondela" href="/proyectos/redondela/index.html">redondela</a></li>
-    </ol>
+            <h5><span class="es">enseñanza</span><span class="en">teaching</span></h5>
+            <ol>
+                <li><a href="/proyectos/talleres-momentos/index.html">talleres momentos</a> (2023)</li>
+            </ol>
+        </div>
+    </div>
 
-    <h3>hardware</h3>
-    <ol>
-        <li><a id="nav-gerassic-organ" href="/proyectos/gerassic-organ/index.html">gerassic organ</a></li>
-    </ol>
+    <div class="nav-section">
+        <h3 class="nav-titulo"><a href="/clientes/index.html"><span class="es">clientes</span><span class="en">clients</span></a></h3>
+        <div class="nav-contenido">
+            <ol>
+                <li><a href="/clientes/claudia-gonzalez-godoy/index.html">claudia gonzález godoy</a></li>
+                <li><a href="/clientes/biblioteca-cuir/index.html">bibliotecaCuir</a></li>
+                <li><a href="/clientes/sokio/index.html">sokio</a></li>
+                <li><a href="/clientes/universidad-diego-portales/index.html">universidad diego portales</a></li>
+            </ol>
+        </div>
+    </div>
 
-    <h3 class="es">enseñanza</h3><h3 class="en">teaching</h3>
-    <ol>
-        <li><a id="nav-talleres-momentos" href="/proyectos/talleres-momentos/index.html">talleres momentos</a> (2023)</li>
-    </ol>
+    <div class="nav-section">
+        <h3 class="nav-titulo"><a href="/personas/index.html"><span class="es">personas</span><span class="en">people</span></a></h3>
+    </div>
+
+    <div class="nav-section">
+        <h3 class="nav-titulo"><a href="https://piruetas.xyz/tienda"><span class="es">tienda</span><span class="en">shop</span></a></h3>
+    </div>
 `;
 
-document.getElementById('divLeftMenu').innerHTML = navbarContent;
-
-// highlight the nav link(s) matching the current page in the same
-// "cajita" boxed style used for page titles elsewhere on the site
-const navSectionForPage = {
-  inicio: ['nav-inicio'],
-  proyectos: ['nav-proyectos'],
-  parla: ['nav-proyectos', 'nav-parla'],
-  osca: ['nav-proyectos', 'nav-osca'],
-  redondela: ['nav-proyectos', 'nav-redondela'],
-  'gerassic-organ': ['nav-proyectos', 'nav-gerassic-organ'],
-  'investigacion-gerassic-organ': ['nav-proyectos', 'nav-gerassic-organ'],
-  'talleres-momentos': ['nav-proyectos', 'nav-talleres-momentos'],
-  'maquinitas-tidal': ['nav-proyectos'],
-  personas: ['nav-personas'],
-  clientes: ['nav-clientes'],
-  'biblioteca-cuir': ['nav-clientes'],
-  sokio: ['nav-clientes'],
-  'universidad-diego-portales': ['nav-clientes'],
-  tienda: ['nav-tienda'],
-};
-const activeIds = navSectionForPage[document.body.dataset.page] || [];
-activeIds.forEach((id) => {
-  const el = document.getElementById(id);
-  if (el) el.classList.add('nav-active');
-});
-
-const menuBtn = document.getElementById('menu-btn');
 const menuSide = document.getElementById('divLeftMenu');
-const menuSpans = menuBtn.querySelectorAll('[data-state]');
+menuSide.innerHTML = navbarContent;
 
-window.setMenuOpen = function (isOpen) {
-  menuSide.classList.toggle('active', isOpen);
-  menuSpans.forEach((span) => {
-    span.classList.toggle(
-      'toggle-active',
-      span.dataset.state === (isOpen ? 'show' : 'hide'),
-    );
-  });
-  localStorage.setItem('menuOpen', isOpen ? 'true' : 'false');
-};
-
-setMenuOpen(localStorage.getItem('menuOpen') === 'true');
-
-// enable the slide transition only after the restored state has
-// painted once, so navigating between pages doesn't replay the
-// open/close animation on load
-requestAnimationFrame(() => {
-  requestAnimationFrame(() => {
-    document.body.classList.add('menu-ready');
-  });
+// en pantallas angostas el menú queda arriba de la página, con las
+// secciones cerradas hasta apretar este botón
+const navToggle = menuSide.querySelector('.nav-toggle');
+navToggle.addEventListener('click', () => {
+  const abierto = menuSide.classList.toggle('abierto');
+  navToggle.setAttribute('aria-expanded', String(abierto));
 });
 
-menuBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  setMenuOpen(!menuSide.classList.contains('active'));
+// marca con la "cajita" el enlace de la página actual y el título de
+// su sección (ej: en /proyectos/parla/ se marcan parla y proyectos)
+function normalizarRuta(ruta) {
+  return ruta.replace(/index\.html$/, '').replace(/\/+$/, '/') || '/';
+}
+
+const rutaActual = normalizarRuta(window.location.pathname);
+menuSide.querySelectorAll('a[href^="/"]').forEach((link) => {
+  const rutaLink = normalizarRuta(link.getAttribute('href'));
+  const esSeccion = link.closest('.nav-titulo') && rutaLink !== '/';
+  if (rutaLink === rutaActual || (esSeccion && rutaActual.startsWith(rutaLink))) {
+    link.classList.add('nav-active');
+  }
 });
