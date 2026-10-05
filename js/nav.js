@@ -35,7 +35,7 @@ const navbarContent = `
         <div class="nav-contenido">
             <h5>popusintes</h5>
             <ol>
-                <li><a href="/chufebu/">chufebu</a> (2026)</li>
+                <li><a href="/proyectos/chufebu/index.html">chufebu</a> (2026)</li>
             </ol>
 
             <h5>software</h5>

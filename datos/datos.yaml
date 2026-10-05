@@ -270,6 +270,24 @@ personas:
 proyectos:
   proyectos:
     - titulo:
+        es: 'chufebu'
+        en: 'chufebu'
+      meta:
+        es: '2026'
+        en: '2026'
+      etiqueta:
+        es: 'popusintes'
+        en: 'popusintes'
+      image: '/media/proyectos/chufebu-placa.svg'
+      alt:
+        es: 'placa de chufebu'
+        en: 'chufebu board'
+      enlace: '/proyectos/chufebu/index.html'
+      subtitulo:
+        es: 'bus de alimentación eurorack de hardware abierto'
+        en: 'open source hardware eurorack power bus'
+
+    - titulo:
         es: 'parla'
         en: 'parla'
       meta:
@@ -449,6 +467,93 @@ parla:
           graphic design and photography: @rafita.studio
           logistics: @jnsplv
           font: @uno_ca
+
+chufebu:
+  es: 'chufebu'
+  en: 'chufebu'
+  meta:
+    es: '2026'
+    en: '2026'
+  etiqueta:
+    es: 'popusintes'
+    en: 'popusintes'
+
+  hero:
+    image: '/media/proyectos/chufebu-placa.svg'
+    alt:
+      es: 'placa de chufebu v0.1 rev-a'
+      en: 'chufebu v0.1 rev-a board'
+
+  sections:
+    - id: descripcion
+      titulo:
+        es: 'descripción'
+        en: 'description'
+      content:
+        es: |-
+          chufebu es un bus de alimentación eurorack de hardware
+          abierto, hecho por piruetas.
+          distribuye ±12V, +5V, CV y GATE a cinco headers de
+          alimentación eurorack de 16 pines, cada uno con su propio
+          conector molex KK-396 de 4 pines para pruebas.
+          está diseñado en KiCad 10 usando solamente las bibliotecas
+          estándar de KiCad.
+        en: |-
+          chufebu is an open source hardware eurorack power bus
+          board by piruetas.
+          It distributes ±12V, +5V, CV and GATE to five 16-pin
+          eurorack power headers, each one paired with its own
+          4-pin Molex KK-396 connector for testing.
+          It is designed in KiCad 10 using only KiCad's standard
+          libraries.
+
+    - id: caracteristicas
+      titulo:
+        es: 'características'
+        en: 'features'
+      content:
+        es: |-
+          5 headers de alimentación eurorack de 16 pines (2x08), conectados en bus.<br>
+          5 conectores molex KK-396 de 4 pines: -12V, GND, +5V y +12V.<br>
+          las líneas CV y GATE también van en bus entre los 5 headers.<br>
+          placa de 100 × 45 mm, 2 capas, con 2 agujeros de montaje M3.
+        en: |-
+          5 eurorack power headers, 16 pins (2x08), bussed together.<br>
+          5 Molex KK-396 4-pin connectors: -12V, GND, +5V and +12V.<br>
+          CV and GATE lines are also bussed across the 5 headers.<br>
+          100 × 45 mm board, 2 layers, with 2 M3 mounting holes.
+
+    - id: producto
+      titulo:
+        es: 'producto'
+        en: 'product'
+      content:
+        es: |-
+          piruetas vende chufebu armado y probado.<br>
+          versión v0.1 rev-a: fabricada en octubre 2026, todavía sin probar.
+        en: |-
+          piruetas sells chufebu assembled and tested.<br>
+          Version v0.1 rev-a: manufactured in October 2026, not yet tested.
+
+    - id: documentacion
+      titulo:
+        es: 'documentación'
+        en: 'documentation'
+      content:
+        es: |-
+          manual de uso, esquemático, placa y bill of materials: <a href="https://piruetas.xyz/chufebu/">piruetas.xyz/chufebu</a><br>
+          archivos fuente de KiCad y de fabricación: <a href="https://github.com/piruetasxyz/chufebu">github.com/piruetasxyz/chufebu</a>
+        en: |-
+          user manual, schematic, board and bill of materials (in Spanish): <a href="https://piruetas.xyz/chufebu/">piruetas.xyz/chufebu</a><br>
+          KiCad source and fabrication files: <a href="https://github.com/piruetasxyz/chufebu">github.com/piruetasxyz/chufebu</a>
+
+    - id: licencia
+      titulo:
+        es: 'licencia'
+        en: 'license'
+      content:
+        es: 'hardware bajo CERN-OHL-P-2.0 y documentación bajo CC-BY-SA-4.0.'
+        en: 'hardware licensed under CERN-OHL-P-2.0 and documentation under CC-BY-SA-4.0.'
 
 investigacion-gerassic-organ:
   titulo:
