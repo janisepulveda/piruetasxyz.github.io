@@ -278,10 +278,10 @@ proyectos:
       etiqueta:
         es: 'popusintes'
         en: 'popusintes'
-      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-esquematico.svg'
       alt:
-        es: 'placa de chufebu'
-        en: 'chufebu board'
+        es: 'esquemático de chufebu'
+        en: 'chufebu schematic'
       enlace: '/proyectos/chufebu/index.html'
       subtitulo:
         es: 'bus de alimentación eurorack de hardware abierto'
