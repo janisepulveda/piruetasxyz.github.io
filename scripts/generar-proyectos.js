@@ -7,9 +7,8 @@
    <script> de fetch/parse de YAML en runtime (js-yaml + render.js), y
    hornea lang="en" en <html> (por defecto no habia ningun atributo
    lang hasta que corria JS, asi que una vista sin JS mostraba ambos
-   idiomas a la vez). Si la pagina trae `imagenes_laterales` (o `hero`)
-   en el YAML, tambien hornea la columna lateral (.proyecto-item junto
-   a .contenido-texto); si no, deja la imagen lateral puesta a mano.
+   idiomas a la vez). Las imagenes (`imagenes`, `hero` y `galeria`)
+   van dentro de .contenido-texto, despues del texto.
 
    Tambien hornea proyectos/index.html (la grilla + el primer frame
    del hero rotativo): comparte este script/workflow con las 9
@@ -26,7 +25,6 @@ const path = require('path');
 const jsyaml = require('../lib/js-yaml.min.js');
 const {
   renderizarDetalle,
-  renderizarImagenesLaterales,
   renderizarProyectosGrid,
   heroInicial,
   escaparHtml,
@@ -105,15 +103,6 @@ function main() {
     const rutaPagina = `/${archivo.replace(/index\.html$/, '')}`;
     let html = fs.readFileSync(rutaArchivo, 'utf8');
     html = reemplazarBloque(html, '<div class="contenido-texto">', renderizarDetalle(data));
-    // la columna lateral solo se hornea si el YAML trae imagenes_laterales
-    // o hero; si no, se deja la imagen puesta a mano en el HTML
-    const lateral = renderizarImagenesLaterales(data);
-    if (lateral) {
-      if (!html.includes('<div class="proyecto-item">')) {
-        throw new Error(`"${archivo}" no tiene <div class="proyecto-item"> para las imágenes laterales de "${clave}"`);
-      }
-      html = reemplazarBloque(html, '<div class="proyecto-item">', lateral);
-    }
     html = reemplazarMetaHead(html, renderizarMetaHead({ ...extraerMetaDeDetalle(data), ruta: rutaPagina }));
     html = quitarScriptsRuntime(html);
     html = hornearIdiomaPorDefecto(html);

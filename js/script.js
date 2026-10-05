@@ -24,13 +24,13 @@ window.refreshDocumentTitle = function () {
     updateDocumentTitle(document.documentElement.getAttribute('lang'));
 };
 
-// swaps each gallery/side image's alt text between the data-alt-es/en
+// swaps each gallery image's alt text between the data-alt-es/en
 // baked onto its <img> by the generator (or, on pages not yet
 // migrated, by render.js) when the language toggles
 window.refreshGaleriaAlt = function () {
     const lang = document.documentElement.getAttribute('lang') || 'en';
     const key = 'alt' + (lang === 'es' ? 'Es' : 'En');
-    document.querySelectorAll('.galeria-item img, .imagen-lateral img').forEach((img) => {
+    document.querySelectorAll('.galeria-item img').forEach((img) => {
         img.alt = img.dataset[key] || '';
     });
 };

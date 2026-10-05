@@ -30,7 +30,7 @@ personas:
           rol:
             es: 'Investigador principal'
             en: 'Principal Investigator'
-          foto: '../media/proyectos/aaron-montoya.jpeg'
+          foto: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-personas/jpg/aaron-montoya.jpg'
           modelo3d: '../assets/3d/montoyamoraga-2026-08.glb'
           descripcion:
             es: |-
@@ -77,7 +77,7 @@ personas:
           rol:
             es: 'Diseñadora, jefa de proyectos'
             en: 'Designer, project manager'
-          foto: '../media/proyectos/janis-sepulveda.jpeg'
+          foto: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-personas/jpg/janis-sepulveda.jpg'
           descripcion:
             es: |-
               Janis Sepúlveda Vera es diseñadora industrial de la
@@ -115,7 +115,7 @@ personas:
           # placeholder hasta tener una foto real (ver plan de
           # reemplazo de render.js, Etapa 4): sin esto, una vista sin
           # JS del visor 3D no tiene nada que mostrar
-          foto: '../media/piruetas-v0.jpg'
+          foto: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg'
           modelo3d: '../assets/3d/mateo-arce-2026-09.glb'
           rol:
             es: 'programador, diseñador gráfico'
@@ -278,7 +278,7 @@ proyectos:
       etiqueta:
         es: 'popusintes'
         en: 'popusintes'
-      image: '/media/proyectos/chufebu-placa.svg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
       alt:
         es: 'placa de chufebu'
         en: 'chufebu board'
@@ -296,7 +296,7 @@ proyectos:
       etiqueta:
         es: 'popusintes'
         en: 'popusintes'
-      image: '/media/proyectos/parla-canasto.jpg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2025-piruetas-parla/jpg/parla-canasto.jpg'
       alt:
         es: 'parla'
         en: 'parla'
@@ -314,7 +314,7 @@ proyectos:
       etiqueta:
         es: 'popusintes'
         en: 'popusintes'
-      image: '/media/proyectos/osca.jpg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg'
       alt:
         es: 'osca'
         en: 'osca'
@@ -332,7 +332,7 @@ proyectos:
       etiqueta:
         es: 'software'
         en: 'software'
-      image: '/media/proyectos/redondela.jpg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-redondela/jpg/redondela.jpg'
       alt:
         es: 'redondela'
         en: 'redondela'
@@ -350,7 +350,7 @@ proyectos:
       etiqueta:
         es: 'hardware'
         en: 'hardware'
-      image: '/media/proyectos/gerassic-organ.jpg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg'
       alt:
         es: 'gerassic organ'
         en: 'gerassic organ'
@@ -368,7 +368,7 @@ proyectos:
       etiqueta:
         es: 'enseñanza'
         en: 'teaching'
-      image: '/media/proyectos/talleres-momentos.jpg'
+      image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg'
       alt:
         es: 'talleres momentos'
         en: 'talleres momentos'
@@ -389,7 +389,7 @@ parla:
     en: 'popusintes'
 
   hero:
-    image: '/media/proyectos/parla-canasto.jpg'
+    image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2025-piruetas-parla/jpg/parla-canasto.jpg'
     alt:
       es: 'parla'
       en: 'parla'
@@ -480,12 +480,12 @@ chufebu:
     es: 'popusintes'
     en: 'popusintes'
 
-  imagenes_laterales:
-    - image: '/media/proyectos/chufebu-placa.svg'
+  imagenes:
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-placa.svg'
       alt:
         es: 'placa de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a board'
-    - image: '/media/proyectos/chufebu-esquematico.svg'
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-chufebu/svg/chufebu-esquematico.svg'
       alt:
         es: 'esquemático de chufebu v0.1 rev-a'
         en: 'chufebu v0.1 rev-a schematic'
@@ -605,6 +605,11 @@ redondela:
   titulo:
     es: 'página en mantención'
     en: 'under maintenance'
+  galeria:
+    - image: 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2026-piruetas-redondela/jpg/redondela-02.jpg'
+      alt:
+        es: 'redondela'
+        en: 'redondela'
   sections:
     - titulo: {}
       content:

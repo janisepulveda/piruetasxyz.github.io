@@ -20,7 +20,7 @@ function escaparHtml(texto) {
 }
 
 const DOMINIO = 'https://piruetas.xyz';
-const IMAGEN_DEFECTO = '/media/piruetas-v0.jpg';
+const IMAGEN_DEFECTO = 'https://cdn.jsdelivr.net/gh/piruetasxyz/piruetas-web-media@main/2022-piruetas-logo/jpg/piruetas-v0.jpg';
 const DESCRIPCION_DEFECTO = 'piruetas es un estudio chileno de arte electrónico y computacional fundado en 2022.';
 
 function textoPlano(html) {
@@ -54,15 +54,10 @@ function extraerMetaDeDetalle(data) {
     ? truncar(textoPlano(seccionConContenido.content.en || seccionConContenido.content.es), 160)
     : '';
 
-  // prioridad: imagen_social explicita > hero > primera de la galeria.
+  // prioridad: imagen_social explicita > imagenes/hero > galeria.
   // Los SVG se descartan porque WhatsApp/Facebook/X/LinkedIn no los
   // muestran como preview; para esos casos se usa imagen_social.
-  const lateral = imagenesLaterales(data)[0];
-  const candidatas = [
-    data.imagen_social,
-    lateral && lateral.image,
-    Array.isArray(data.galeria) && data.galeria[0] && data.galeria[0].image,
-  ];
+  const candidatas = [data.imagen_social, ...imagenesDePagina(data).map((i) => i.image)];
   const imagen = candidatas.find((c) => c && !/\.svg$/i.test(c)) || '';
 
   return { titulo, descripcion, imagen };
@@ -129,37 +124,19 @@ function renderizarGaleria(galeria) {
   return `<div class="galeria-filas">${filas}</div>`;
 }
 
-/* Lista de imágenes de la columna lateral de una página de detalle
-   (el `.proyecto-item` junto a `.contenido-texto`): `imagenes_laterales`
-   si existe (ej. placa + esquemático de un popusinte), o si no el
-   `hero` suelto como única imagen. Vacía si no hay ninguna. */
-function imagenesLaterales(data) {
-  if (Array.isArray(data.imagenes_laterales)) return data.imagenes_laterales.filter((i) => i && i.image);
-  if (data.hero && data.hero.image) return [data.hero];
-  return [];
-}
-
-/* Arma el `.proyecto-item` de la columna lateral, con cada imagen
-   enlazada a su archivo para verla en tamaño completo (útil para
-   esquemáticos y placas). Igual que la galería, el alt horneado va en
-   inglés y refreshGaleriaAlt (js/script.js) lo cambia con el idioma.
-   Devuelve '' si la página no tiene imágenes laterales en el YAML. */
-function renderizarImagenesLaterales(data) {
-  const imagenes = imagenesLaterales(data);
-  if (!imagenes.length) return '';
-  const items = imagenes
-    .map((item) => {
-      const src = escaparHtml(item.image);
-      const altEsRaw = (item.alt && item.alt.es) || '';
-      const altEnRaw = (item.alt && item.alt.en) || '';
-      const altInicial = escaparHtml(altEnRaw || altEsRaw);
-      return (
-        `<a class="imagen-lateral" href="${src}" target="_blank" rel="noopener">` +
-        `<img src="${src}" data-alt-es="${escaparHtml(altEsRaw)}" data-alt-en="${escaparHtml(altEnRaw)}" alt="${altInicial}"></a>`
-      );
-    })
-    .join('');
-  return `<div class="proyecto-item">${items}</div>`;
+/* Todas las imágenes de una página de detalle, en orden: `imagenes`
+   (ej. placa + esquemático de un popusinte), o si no el `hero`
+   suelto, y después la `galeria`. Se muestran después del texto,
+   cada una en su propia fila de ancho completo (nunca al lado del
+   texto). Vacía si no hay ninguna. */
+function imagenesDePagina(data) {
+  const principales = Array.isArray(data.imagenes)
+    ? data.imagenes
+    : data.hero
+      ? [data.hero]
+      : [];
+  const galeria = Array.isArray(data.galeria) ? data.galeria : [];
+  return [...principales, ...galeria].filter((i) => i && i.image);
 }
 
 function renderizarFichaTecnica(data) {
@@ -231,10 +208,11 @@ function renderizarSecciones(sections) {
 function renderizarDetalle(data) {
   const tituloData = data.titulo || data;
   const h1 = `<h1 class="cajita">${spanEsEn((tituloData && tituloData.es) || '', (tituloData && tituloData.en) || '')}</h1>`;
-  const galeria = renderizarGaleria(data.galeria);
   const ficha = renderizarFichaTecnica(data);
   const secciones = renderizarSecciones(data.sections);
-  return `<div class="contenido-texto">${h1}${galeria}${ficha}${secciones}</div>`;
+  // primero el texto y después las imágenes, como en montoyamoraga.github.io
+  const imagenes = renderizarGaleria(imagenesDePagina(data));
+  return `<div class="contenido-texto">${h1}${ficha}${secciones}${imagenes}</div>`;
 }
 
 /* Porta createPersonaCard (js/render.js). A diferencia del original,
@@ -354,7 +332,7 @@ function renderizarProyectosGrid(proyectos) {
         p.alt && typeof p.alt === 'object'
           ? p.alt.es || p.alt.en || ''
           : p.alt || (p.titulo && (p.titulo.es || p.titulo.en)) || 'piruetas';
-      const imagenSrc = escaparHtml(p.image || '/media/piruetas-v0.jpg');
+      const imagenSrc = escaparHtml(p.image || IMAGEN_DEFECTO);
       const link =
         `<${tagLink}${hrefAttr} class="proyecto-link"><div class="proyecto-imgwrap">` +
         `<img src="${imagenSrc}" alt="${escaparHtml(altTexto)}"></div></${tagLink}>`;
@@ -386,7 +364,7 @@ function heroInicial(proyectos) {
   if (!p) return null;
   const alt = (p.alt && (p.alt.es || p.alt.en)) || (p.titulo && (p.titulo.es || p.titulo.en)) || 'piruetas';
   return {
-    src: p.image || '/media/piruetas-v0.jpg',
+    src: p.image || IMAGEN_DEFECTO,
     alt,
     href: p.enlace || '#',
   };
@@ -421,7 +399,6 @@ function renderizarClientesLista(clientes) {
 module.exports = {
   escaparHtml,
   renderizarDetalle,
-  renderizarImagenesLaterales,
   renderizarTituloH1,
   renderizarClientesLista,
   renderizarPersonaCard,

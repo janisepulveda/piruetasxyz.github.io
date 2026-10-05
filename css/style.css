@@ -320,6 +320,13 @@ body {
   height: 100%;
 }
 
+/* el canvas de three.js es transparente (alpha: true), así que una vez
+   cargado el modelo el visor necesita fondo propio para tapar la
+   <img> de respaldo */
+.persona-foto .visor-3d.is-loaded {
+  background-color: #eee;
+}
+
 .visor-3d canvas {
   display: block;
   width: 100% !important;
